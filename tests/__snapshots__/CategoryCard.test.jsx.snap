@@ -1,0 +1,28 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Renders correct Link card 1`] = `
+<div>
+  <a
+    href="/cakes"
+  >
+    <div
+      class="cardImg"
+    >
+      <img
+        alt=""
+        src="#"
+      />
+    </div>
+    <div
+      class="cardContent"
+    >
+      <h3>
+        Cakes
+      </h3>
+      <p>
+        Los mejores pasteles
+      </p>
+    </div>
+  </a>
+</div>
+`;
