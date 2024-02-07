@@ -1,0 +1,28 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Renders correct button with accesibility label 1`] = `
+<div>
+  <button
+    aria-label="Añadir al carro"
+    class="primaryBtn"
+    type="button"
+  >
+    <span
+      class="material-symbols-outlined"
+    >
+      add
+    </span>
+  </button>
+</div>
+`;
+
+exports[`Renders correct button without label 1`] = `
+<div>
+  <button
+    class="primaryBtn"
+    type="button"
+  >
+    Añadir al carro
+  </button>
+</div>
+`;
