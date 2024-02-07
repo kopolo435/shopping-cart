@@ -1,2 +1,2 @@
-# shopping-cart
-Pagina de un negocio con una seccion de carro de compras. Con este proyecto busco poner en practica react routing, pruebas de componentes y  buenas practicas en react
+Este proyecto esta enfocado en ser una oportunidad para poner en practica mi conocimiento
+acerca de routing y test de componentes de react
