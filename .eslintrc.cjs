@@ -13,7 +13,6 @@ module.exports = {
   parserOptions: { ecmaVersion: "latest", sourceType: "module" },
   settings: { react: { version: "18.2" } },
   plugins: ["react-refresh"],
-  extends: ["eslint:recommended"],
   overrides: [
     {
       files: ["tests/**"], // or any other pattern
