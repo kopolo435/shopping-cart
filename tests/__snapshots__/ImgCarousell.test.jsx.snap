@@ -1,0 +1,73 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Carousell renders right 1`] = `
+<div>
+  <div
+    class="imgCarousell"
+  >
+    <div
+      class="carousellTop"
+    >
+      <button
+        aria-label="show previous image"
+        class="carousellBtn"
+        type="button"
+      >
+        left
+      </button>
+      <div
+        class="carousellContent"
+      >
+        <div
+          class="imgContainer"
+        >
+          <img
+            alt="Imagen 1"
+            data-testid="currentImg"
+            src="url/sitio1"
+          />
+          <img
+            alt="Imagen 2"
+            src="url/sitio2"
+          />
+          <img
+            alt="Imagen 3"
+            src="url/sitio3"
+          />
+        </div>
+        <h3
+          data-testid="currentImgTitle"
+        >
+          img1
+        </h3>
+      </div>
+      <button
+        aria-label="show next image"
+        class="carousellBtn"
+        type="button"
+      >
+        left
+      </button>
+    </div>
+    <div
+      class="imgControl"
+    >
+      <button
+        aria-label="show image 0"
+        class="chooseImg"
+        type="button"
+      />
+      <button
+        aria-label="show image 1"
+        class="chooseImg"
+        type="button"
+      />
+      <button
+        aria-label="show image 2"
+        class="chooseImg"
+        type="button"
+      />
+    </div>
+  </div>
+</div>
+`;
