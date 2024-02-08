@@ -31,7 +31,6 @@ function HamburguerMenu() {
     buttonData.name = "close sidebar";
     buttonData.func = closeMenu;
   }
-  console.log(buttonData.name);
   return (
     <div data-testid="menuContainer" className={`sideBarContainer ${status}`}>
       <Button
