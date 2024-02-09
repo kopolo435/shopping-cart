@@ -5,10 +5,11 @@ import userEvent from "@testing-library/user-event";
 import ShoppinCart from "../src/components/ShoppingCart";
 
 it("Renders shoppingCard hidden", () => {
-  render(<ShoppinCart />);
-  expect(getByTestId("shoppingCartContainer").classList.contains("hide")).toBe(
-    true
-  );
+  const items = new Map();
+  render(<ShoppinCart itemList={items} />);
+  expect(
+    screen.getByTestId("shoppingCartContainer").classList.contains("hide")
+  ).toBe(true);
 });
 
 it("Renders ammount of items in shopping cart", () => {
@@ -16,14 +17,15 @@ it("Renders ammount of items in shopping cart", () => {
   items.set("1", { name: "cake1" });
   items.set("2", { name: "cake2" });
 
-  render(<ShoppinCart items={items} />);
+  render(<ShoppinCart itemList={items} />);
 
-  expect(screen.getByRole("paragraph").textContent).toBe("2");
+  expect(screen.getByTestId("itemAmmount").textContent).toBe("2");
 });
 
 it("Renders shopping cart open when open button is clicked", async () => {
   const user = userEvent.setup();
-  render(<ShoppinCart />);
+  const items = new Map();
+  render(<ShoppinCart itemList={items} />);
 
   const button = screen.getByRole("button", { name: "show shopping cart" });
 
@@ -40,9 +42,10 @@ it("Renders shopping cart open when open button is clicked", async () => {
 
 it("Renders shopping cart close when close button is clicked", async () => {
   const user = userEvent.setup();
-  render(<ShoppinCart />);
+  const items = new Map();
+  render(<ShoppinCart itemList={items} />);
 
-  const showButton = screen.getByRole("button", { name: "open shopping cart" });
+  const showButton = screen.getByRole("button", { name: "show shopping cart" });
 
   await user.click(showButton);
 
@@ -57,7 +60,9 @@ it("Renders shopping cart close when close button is clicked", async () => {
   ).toBe(true);
 
   await (() => {
-    screen.getByTestId("shoppingCartContainer").classList.contains("hide");
+    expect(
+      screen.getByTestId("shoppingCartContainer").classList.contains("hide")
+    ).toBe(true);
   },
   1000);
 });
