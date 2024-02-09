@@ -2,8 +2,9 @@ import React from "react";
 import PropTypes from "prop-types";
 import SpanIcon from "./SpanIcon";
 import Button from "./Button";
+import ShoppingItem from "./ShoppingItem";
 
-function ShoppinCart({ itemList, setItemList }) {
+function ShoppinCart({ itemList, deleteItem }) {
   const [status, setStatus] = React.useState("hide");
   function closeMenu() {
     setStatus("hiding");
@@ -51,10 +52,14 @@ function ShoppinCart({ itemList, setItemList }) {
             <>
               <p>
                 Posee
-                {itemList.size} en su carro
+                {itemList.size} productos en su carro
               </p>
               {Array.from(itemList.values()).map((item) => (
-                <p>{item.name}</p>
+                <ShoppingItem
+                  key={item.id}
+                  item={item}
+                  deleteItem={deleteItem}
+                />
               ))}
             </>
           )}
@@ -66,7 +71,7 @@ function ShoppinCart({ itemList, setItemList }) {
 
 ShoppinCart.propTypes = {
   itemList: PropTypes.object.isRequired,
-  setItemList: PropTypes.func.isRequired,
+  deleteItem: PropTypes.func.isRequired,
 };
 
 export default ShoppinCart;
