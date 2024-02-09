@@ -26,11 +26,12 @@ function ImgCarousell({ imgList }) {
       <div className="carousellTop">
         <Button
           type="button"
-          content="left"
           onClick={moveToLeft}
           className="carousellBtn"
           label="show previous image"
-        />
+        >
+          left
+        </Button>
         <div className="carousellContent">
           <div className="imgContainer">
             {imgList.map((imgData, index) => {
@@ -54,11 +55,12 @@ function ImgCarousell({ imgList }) {
         </div>
         <Button
           type="button"
-          content="left"
           onClick={moveToRight}
           className="carousellBtn"
           label="show next image"
-        />
+        >
+          left
+        </Button>
       </div>
       <div className="imgControl">
         {imgList.map((data, index) => {
@@ -77,7 +79,6 @@ function ImgCarousell({ imgList }) {
           return (
             <Button
               type="button"
-              content=""
               className="chooseImg"
               onClick={() => setCurrentImgIndex(index)}
               label={`show image ${index}`}

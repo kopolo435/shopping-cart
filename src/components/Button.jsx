@@ -1,8 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
-import SpanIcon from "./SpanIcon";
 
-function Button({ content, onClick, className, label, type }) {
+function Button({ children, onClick, className, label, type }) {
   return label ? (
     <button
       type={type === "button" ? "button" : "submit"}
@@ -10,7 +9,7 @@ function Button({ content, onClick, className, label, type }) {
       className={className}
       aria-label={label}
     >
-      {content}
+      {children}
     </button>
   ) : (
     <button
@@ -18,14 +17,13 @@ function Button({ content, onClick, className, label, type }) {
       onClick={onClick}
       className={className}
     >
-      {content}
+      {children}
     </button>
   );
 }
 
 Button.propTypes = {
-  content: PropTypes.oneOfType([PropTypes.string, PropTypes.element])
-    .isRequired,
+  children: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
   onClick: PropTypes.func.isRequired,
   className: PropTypes.string.isRequired,
   label: PropTypes.string,
@@ -34,6 +32,7 @@ Button.propTypes = {
 
 Button.defaultProps = {
   label: null,
+  children: "",
 };
 
 export default Button;

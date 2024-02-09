@@ -7,16 +7,12 @@ import SpanIcon from "../src/components/SpanIcon";
 
 it("Renders correct button without label", () => {
   const mockFn = vi.fn(() => {});
-  const content = "Añadir al carro";
   const btnClass = "primaryBtn";
 
   const { container } = render(
-    <Button
-      type="button"
-      content={content}
-      onClick={mockFn}
-      className={btnClass}
-    />
+    <Button type="button" onClick={mockFn} className={btnClass}>
+      Añadir al carro
+    </Button>
   );
 
   expect(container).toMatchSnapshot();
@@ -29,13 +25,9 @@ it("Renders correct button with accesibility label", () => {
   const label = "Añadir al carro";
 
   const { container } = render(
-    <Button
-      type="button"
-      content={content}
-      onClick={mockFn}
-      className={btnClass}
-      label={label}
-    />
+    <Button type="button" onClick={mockFn} className={btnClass} label={label}>
+      <SpanIcon iconName="add" />
+    </Button>
   );
 
   expect(container).toMatchSnapshot();
@@ -43,17 +35,13 @@ it("Renders correct button with accesibility label", () => {
 
 it("Calls onClick function when clicked", async () => {
   const onClick = vi.fn(() => {});
-  const content = "Añadir al carro";
   const btnClass = "primaryBtn";
   const user = userEvent.setup();
 
   render(
-    <Button
-      type="button"
-      content={content}
-      onClick={onClick}
-      className={btnClass}
-    />
+    <Button type="button" onClick={onClick} className={btnClass}>
+      Añadir al carro
+    </Button>
   );
 
   const button = screen.getByRole("button", { name: "Añadir al carro" });

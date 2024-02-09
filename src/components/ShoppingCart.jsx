@@ -18,18 +18,17 @@ function ShoppinCart({ itemList, setItemList }) {
       setStatus("show");
     }, 500);
   }
-  const closeButtonContent = (() => <SpanIcon iconName="close" />)();
-  const openButtonContent = (() => <SpanIcon iconName="open" />)();
   return (
     <>
       <div className="cartButtonContainer">
         <Button
           type="button"
-          content={openButtonContent}
           onClick={openMenu}
           label="show shopping cart"
           className=""
-        />
+        >
+          <SpanIcon iconName="open" />
+        </Button>
         <p data-testid="itemAmmount">{itemList.size}</p>
       </div>
       <div
@@ -38,11 +37,12 @@ function ShoppinCart({ itemList, setItemList }) {
       >
         <Button
           type="button"
-          content={closeButtonContent}
           onClick={closeMenu}
           label="hide shopping cart"
           className=""
-        />
+        >
+          <SpanIcon iconName="close" />{" "}
+        </Button>
         <h2>Tu carro de compras</h2>
         <div className="itemsContainer">
           {itemList.size < 1 ? (
@@ -51,9 +51,7 @@ function ShoppinCart({ itemList, setItemList }) {
             <>
               <p>
                 Posee
-                {itemList.size}
-                {" "}
-                en su carro
+                {itemList.size} en su carro
               </p>
               {Array.from(itemList.values()).map((item) => (
                 <p>{item.name}</p>

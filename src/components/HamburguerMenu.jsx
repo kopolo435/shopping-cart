@@ -36,10 +36,11 @@ function HamburguerMenu() {
       <Button
         type="button"
         onClick={buttonData.func}
-        content={buttonData.content}
         className="sideBarBtn"
         label={buttonData.name}
-      />
+      >
+        {buttonData.content}
+      </Button>
       <nav className="sideBarContent">
         <Link to="#">Home</Link>
         <Link to="#">Dulces</Link>
