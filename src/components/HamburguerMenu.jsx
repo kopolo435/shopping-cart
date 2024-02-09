@@ -32,7 +32,7 @@ function HamburguerMenu() {
     buttonData.func = closeMenu;
   }
   return (
-    <div data-testid="menuContainer" className={`sideBarContainer ${status}`}>
+    <>
       <Button
         type="button"
         onClick={buttonData.func}
@@ -41,14 +41,16 @@ function HamburguerMenu() {
       >
         {buttonData.content}
       </Button>
-      <nav className="sideBarContent">
-        <Link to="#">Home</Link>
-        <Link to="#">Dulces</Link>
-        <Link to="#">Cupcakes</Link>
-        <Link to="#">Postres Helados</Link>
-        <Link to="#">K-pop</Link>
-      </nav>
-    </div>
+      <div data-testid="menuContainer" className={`sideBarContainer ${status}`}>
+        <nav className="sideBarContent">
+          <Link to="#">Home</Link>
+          <Link to="#">Dulces</Link>
+          <Link to="#">Cupcakes</Link>
+          <Link to="#">Postres Helados</Link>
+          <Link to="#">K-pop</Link>
+        </nav>
+      </div>
+    </>
   );
 }
 
