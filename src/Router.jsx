@@ -1,6 +1,7 @@
 import React from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import CategoryCard from "./components/CategoryCard";
+import LoginForm from "./components/LoginForm";
 
 const testData = {
   name: "Cakes",
@@ -13,7 +14,13 @@ function Router() {
   const router = createBrowserRouter([
     {
       path: "/",
-      element: <CategoryCard data={testData} />,
+      element: (
+        <LoginForm
+          onSubmit={() => {
+            console.log("hola");
+          }}
+        />
+      ),
     },
     {
       path: "profile",
