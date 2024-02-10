@@ -62,6 +62,14 @@ function passwordTest(password) {
   return "";
 }
 
+function confirmPasswordTest(confirmPassword, password) {
+  if (confirmPassword !== password) {
+    return "Las contraseñas no coinciden";
+  }
+
+  return "";
+}
+
 export {
   nameInputTest,
   emailInputTest,
@@ -69,4 +77,5 @@ export {
   requiredTestField,
   dateInputTest,
   passwordTest,
+  confirmPasswordTest,
 };
