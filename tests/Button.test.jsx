@@ -20,7 +20,6 @@ it("Renders correct button without label", () => {
 
 it("Renders correct button with accesibility label", () => {
   const mockFn = vi.fn(() => {});
-  const content = <SpanIcon iconName="add" />;
   const btnClass = "primaryBtn";
   const label = "Añadir al carro";
 
