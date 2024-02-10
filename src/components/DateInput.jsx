@@ -5,12 +5,33 @@ function formatDateToString(dateValue) {
   return dateValue ? dateValue.toISOString().split("T")[0] : "";
 }
 
+function validateError(name, value, setError, updateFormErrors, validation) {
+  const errorMessage = validation(value);
+  setError(errorMessage);
+  if (errorMessage !== "") {
+    updateFormErrors((current) => {
+      const tempMap = new Map([...current]);
+      tempMap.set(name, true);
+      return tempMap;
+    });
+  } else {
+    updateFormErrors((current) => {
+      const tempMap = new Map([...current]);
+      if (tempMap.get(name)) {
+        tempMap.delete(name);
+      }
+      return tempMap;
+    });
+  }
+}
+
 function DateInput({
   label,
   name,
   updateFormErrors,
   updateFormValues,
   validation,
+  submitting,
 }) {
   const [value, setValue] = React.useState("");
   const [error, setError] = React.useState(false);
@@ -21,18 +42,21 @@ function DateInput({
     return dateObj;
   }
 
+  React.useEffect(() => {
+    if (submitting) {
+      validateError(name, value, setError, updateFormErrors, validation);
+    }
+  }, [submitting, setError, updateFormErrors, validation, name, value]);
+
   function handleInputChange(dateString) {
     const newValue = setDateObj(dateString);
     setValue(newValue);
-    updateFormValues(newValue);
-    if (!validation(newValue)) {
-      setError(true);
-      updateFormErrors((current) => {
-        const tempMap = new Map([...current]);
-        tempMap.set(name, true);
-        return tempMap;
-      });
-    }
+    updateFormValues((current) => {
+      const tempMap = new Map([...current]);
+      tempMap.set(name, newValue);
+      return tempMap;
+    });
+    validateError(name, value, setError, updateFormErrors, validation);
   }
 
   return !error ? (
@@ -68,7 +92,7 @@ function DateInput({
         />
       </label>
       <p id={`${name}-error`} role="alert">
-        La fecha es invalida
+        {error}
       </p>
     </div>
   );
@@ -80,6 +104,7 @@ DateInput.propTypes = {
   updateFormErrors: PropTypes.func.isRequired,
   updateFormValues: PropTypes.func.isRequired,
   validation: PropTypes.func.isRequired,
+  submitting: PropTypes.string.isRequired,
 };
 
 export default DateInput;

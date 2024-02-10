@@ -31,7 +31,7 @@ it("Calls updateFormError and UpdateFormValues on an error", async () => {
       name="nombre"
       updateFormErrors={mock1Fn}
       updateFormValues={mock2Fn}
-      validation={() => false}
+      validation={() => "Hay un error grave"}
     />
   );
 
@@ -53,7 +53,7 @@ it("Calls updateFormValues on input change", async () => {
       name="nombre"
       updateFormErrors={() => {}}
       updateFormValues={mockFn}
-      validation={() => true}
+      validation={() => ""}
     />
   );
 
@@ -73,7 +73,7 @@ it("Shows alert on an error", async () => {
       name="nombre"
       updateFormErrors={() => {}}
       updateFormValues={() => {}}
-      validation={() => false}
+      validation={() => "Hay un error grave"}
     />
   );
 

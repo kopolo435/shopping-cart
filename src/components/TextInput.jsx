@@ -1,6 +1,26 @@
 import React from "react";
 import PropTypes from "prop-types";
 
+function validateError(name, value, setError, updateFormErrors, validation) {
+  const errorMessage = validation(value);
+  setError(errorMessage);
+  if (errorMessage !== "") {
+    updateFormErrors((current) => {
+      const tempMap = new Map([...current]);
+      tempMap.set(name, true);
+      return tempMap;
+    });
+  } else {
+    updateFormErrors((current) => {
+      const tempMap = new Map([...current]);
+      if (tempMap.get(name)) {
+        tempMap.delete(name);
+      }
+      return tempMap;
+    });
+  }
+}
+
 function TextInput({
   type,
   label,
@@ -8,26 +28,30 @@ function TextInput({
   updateFormErrors,
   updateFormValues,
   validation,
+  submitting,
 }) {
   const [value, setValue] = React.useState("");
-  const [error, setError] = React.useState(false);
+  const [error, setError] = React.useState("");
+
+  React.useEffect(() => {
+    if (submitting) {
+      validateError(name, value, setError, updateFormErrors, validation);
+    }
+  }, [submitting, setError, updateFormErrors, validation, name, value]);
 
   function handleInputChange(newValue) {
     setValue(newValue);
-    updateFormValues(newValue);
-    if (!validation(newValue)) {
-      setError(true);
-      updateFormErrors((current) => {
-        const tempMap = new Map([...current]);
-        tempMap.set(name, true);
-        return tempMap;
-      });
-    }
+    updateFormValues((current) => {
+      const tempMap = new Map([...current]);
+      tempMap.set(name, newValue);
+      return tempMap;
+    });
+    validateError(name, newValue, setError, updateFormErrors, validation);
   }
 
-  return !error ? (
+  return error === "" ? (
     <div className="textInputContainer">
-      <label htmlFor="nombre">
+      <label htmlFor={name}>
         {label}
         *
         <input
@@ -42,7 +66,7 @@ function TextInput({
     </div>
   ) : (
     <div className="textInputContainer">
-      <label htmlFor="nombre">
+      <label htmlFor={name}>
         {label}
         *
         <input
@@ -50,14 +74,14 @@ function TextInput({
           id={name}
           value={value}
           name={name}
-          aria-describedby="nombre-error"
+          aria-describedby={`${name}-error`}
           aria-invalid="true"
           required
           onChange={(e) => handleInputChange(e.target.value)}
         />
       </label>
-      <p id="nombre-error" role="alert">
-        El nombre no es del tamaño correcto
+      <p id={`${name}-error`} role="alert">
+        {error}
       </p>
     </div>
   );
@@ -70,6 +94,7 @@ TextInput.propTypes = {
   updateFormErrors: PropTypes.func.isRequired,
   updateFormValues: PropTypes.func.isRequired,
   validation: PropTypes.func.isRequired,
+  submitting: PropTypes.string.isRequired,
 };
 
 export default TextInput;

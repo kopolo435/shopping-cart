@@ -4,6 +4,7 @@ import { act } from "react-dom/test-utils";
 import React from "react";
 import userEvent from "@testing-library/user-event";
 import DateInput from "../src/components/DateInput";
+import { dateInputTest } from "../src/javascript/inputValidation";
 
 it("Renders date input right", () => {
   const { container } = render(
@@ -12,7 +13,7 @@ it("Renders date input right", () => {
       name="expiracion"
       updateFormErrors={() => {}}
       updateFormValues={() => {}}
-      validation={() => {}}
+      validation={dateInputTest}
     />
   );
 
@@ -28,7 +29,7 @@ it("Calls updateFormError and UpdateFormValues on an error", async () => {
       name="expiracion"
       updateFormErrors={mock1Fn}
       updateFormValues={mock2Fn}
-      validation={() => false}
+      validation={dateInputTest}
     />
   );
 
@@ -50,7 +51,7 @@ it("Calls updateFormValues on input change", async () => {
       name="expiracion"
       updateFormErrors={() => {}}
       updateFormValues={mockFn}
-      validation={() => true}
+      validation={dateInputTest}
     />
   );
 
@@ -69,7 +70,7 @@ it("Shows alert on an error", async () => {
       name="expiracion"
       updateFormErrors={() => {}}
       updateFormValues={() => {}}
-      validation={() => false}
+      validation={dateInputTest}
     />
   );
 
