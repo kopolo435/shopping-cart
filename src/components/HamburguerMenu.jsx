@@ -23,7 +23,7 @@ function HamburguerMenu() {
   }
 
   if (status === "hide" || status === "hiding") {
-    buttonData.content = <SpanIcon iconName="close" />;
+    buttonData.content = <SpanIcon iconName="open" />;
     buttonData.name = "open sidebar";
     buttonData.func = openMenu;
   } else {
@@ -43,11 +43,11 @@ function HamburguerMenu() {
       </Button>
       <div data-testid="menuContainer" className={`sideBarContainer ${status}`}>
         <nav className="sideBarContent">
-          <Link to="#">Home</Link>
-          <Link to="#">Dulces</Link>
-          <Link to="#">Cupcakes</Link>
-          <Link to="#">Postres Helados</Link>
-          <Link to="#">K-pop</Link>
+          <Link to="/">Home</Link>
+          <Link to="/dulces">Dulces</Link>
+          <Link to="/cupcakes">Cupcakes</Link>
+          <Link to="/postresHelados">Postres Helados</Link>
+          <Link to="/kpops">K-pop</Link>
         </nav>
       </div>
     </>

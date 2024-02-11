@@ -6,7 +6,7 @@ function WideNav() {
     <nav className="wideNav">
       <ul>
         <li>
-          <Link to="#">Home</Link>
+          <Link to="/">Home</Link>
         </li>
         <li>
           <Link to="/dulces">Dulces</Link>
@@ -15,10 +15,10 @@ function WideNav() {
           <Link to="/cupcakes">Cupcakes</Link>
         </li>
         <li>
-          <Link to="/postreshelados">Postres helados</Link>
+          <Link to="/postresHelados">Postres helados</Link>
         </li>
         <li>
-          <Link to="kpops">K-pops</Link>
+          <Link to="/kpops">K-pops</Link>
         </li>
       </ul>
     </nav>
