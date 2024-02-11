@@ -1,10 +1,10 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
-import Header from "./Header";
-import Footer from "./Footer";
-import WideNav from "./WideNav";
-import HamburguerMenu from "./HamburguerMenu";
-import CategoryCard from "./CategoryCard";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
+import WideNav from "../components/WideNav";
+import HamburguerMenu from "../components/HamburguerMenu";
+import CategoryCard from "../components/CategoryCard";
 import data from "../assets/data.json";
 
 function HomePage() {

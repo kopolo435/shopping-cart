@@ -1,7 +1,8 @@
 import React from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import CategoryCard from "./components/CategoryCard";
-import LoginForm from "./components/LoginForm";
+import HomePage from "./pages/HomePage";
+import ErrorPage from "./pages/ErroPage";
 
 const testData = {
   name: "Cakes",
@@ -14,13 +15,8 @@ function Router() {
   const router = createBrowserRouter([
     {
       path: "/",
-      element: (
-        <LoginForm
-          onSubmit={() => {
-            console.log("hola");
-          }}
-        />
-      ),
+      element: <HomePage />,
+      errorElement: <ErrorPage />,
     },
     {
       path: "profile",
