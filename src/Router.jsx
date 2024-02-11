@@ -1,6 +1,6 @@
 import React from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import CategoryCard from "./components/CategoryCard";
+import CategoryPage from "./pages/CategoryPage";
 import HomePage from "./pages/HomePage";
 import ErrorPage from "./pages/ErroPage";
 
@@ -19,8 +19,8 @@ function Router() {
       errorElement: <ErrorPage />,
     },
     {
-      path: "profile",
-      element: <CategoryCard data={testData} />,
+      path: "category/:name",
+      element: <CategoryPage />,
     },
   ]);
 
