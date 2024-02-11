@@ -7,9 +7,15 @@ import CategoryCard from "../components/CategoryCard";
 
 function CategoryPage() {
   const [info, setInfo] = React.useState(null);
+  const [itemMap, setItemMap] = React.useState(new Map());
   const { name } = useParams();
   React.useEffect(() => {
+    const tempMap = new Map();
+    data.itemList.forEach((item) => {
+      tempMap.set(item.id, item);
+    });
     setInfo(data.categoryInfo[name]);
+    setItemMap(tempMap);
   }, [name]);
 
   return (
@@ -27,8 +33,8 @@ function CategoryPage() {
             </div>
           </div>
           <div className="itemsContainer">
-            {info.items.map((item) => (
-              <CategoryCard key={item.id} data={item} />
+            {info.items.map((itemId) => (
+              <CategoryCard key={itemId} data={itemMap.get(itemId)} />
             ))}
           </div>
         </main>
