@@ -1,3 +1,90 @@
+function checkCreditCardPin(ccPin) {
+  const regex = /\d{4}/;
+  if (ccPin.length === 0) {
+    return "Debe ingresar el Pin de la tarjeta";
+  }
+  if (ccPin.length < 4) {
+    return "El Pin ingresado es muy corto";
+  }
+  if (ccPin.length > 4) {
+    return "El Pin ingresado es muy largo";
+  }
+  if (!regex.test(ccPin)) {
+    return "El Pin ingresado es incorrecto";
+  }
+  return "";
+}
+
+function checkAddress(address) {
+  const regex = /^[A-Za-z0-9 ]+$/;
+  if (address.length === 0) {
+    return "Debe ingresar su direccion";
+  }
+  if (!regex.test(address)) {
+    return "La direccion ingresada tiene caracteres invalidos";
+  }
+  return "";
+}
+
+function checkMonthExpiration(month) {
+  const regex = /[1-9][0-9]?/;
+
+  if (!regex.test(month)) {
+    return "El mes ingresado es invalido";
+  }
+
+  if (month.length === 0) {
+    return "Debe ingresar un mes del 1 al 12";
+  }
+
+  if (month < 1) {
+    return "Debe ingresar un mes del 1 al 12";
+  }
+
+  if (month > 12) {
+    return "Debe ingresar un mes del 1 al 12";
+  }
+
+  return "";
+}
+
+function checkYearExpiration(year) {
+  const regex = /\d{4}/;
+
+  if (year.length === 0) {
+    return "Debe ingresar un año";
+  }
+
+  if (!regex.test(year)) {
+    return "Debe ingresar el año en el formato: 1902";
+  }
+
+  if (year < 2024) {
+    return "Debe ingresar un año mayor o igual a 2024";
+  }
+
+  if (year > 2050) {
+    return "No debe ingresar un año mayor a 2050";
+  }
+
+  return "";
+}
+
+function checkCreditCardNumber(ccNumber) {
+  const regex = /\b\d{4}[\s-]?\d{4}[\s-]?\d{4}[\s-]?\d{4}\b/;
+
+  if (ccNumber.length === 0) {
+    return "Debe ingresar los numeros de la tarjeta";
+  }
+  if (ccNumber.length < 16) {
+    return "Debe ingresar los 16 numeros de la tarjeta";
+  }
+  if (!regex.test(ccNumber)) {
+    return "Ingreso caracteres invalidos";
+  }
+  return "";
+}
+
 function nameInputTest(text) {
   const regex = /^[A-Za-z\s'-]+$/;
   if (text.length === 0) {
@@ -78,4 +165,8 @@ export {
   dateInputTest,
   passwordTest,
   confirmPasswordTest,
+  checkCreditCardNumber,
+  checkAddress,
+  checkMonthExpiration,
+  checkYearExpiration,
 };
