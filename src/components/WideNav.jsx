@@ -9,16 +9,16 @@ function WideNav() {
           <Link to="/">Home</Link>
         </li>
         <li>
-          <Link to="category/dulces">Dulces</Link>
+          <Link to="/dulces">Dulces</Link>
         </li>
         <li>
-          <Link to="category/cupcakes">Cupcakes</Link>
+          <Link to="/cupcakes">Cupcakes</Link>
         </li>
         <li>
-          <Link to="category/postresHelados">Postres helados</Link>
+          <Link to="/postresHelados">Postres helados</Link>
         </li>
         <li>
-          <Link to="category/kpops">K-pops</Link>
+          <Link to="/kpops">K-pops</Link>
         </li>
       </ul>
     </nav>
