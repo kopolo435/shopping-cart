@@ -8,6 +8,7 @@ import {
   checkMonthExpiration,
   checkYearExpiration,
   nameInputTest,
+  checkCreditCardPin,
 } from "../javascript/inputValidation";
 
 function AddCcForm({ onSubmit }) {
@@ -47,6 +48,15 @@ function AddCcForm({ onSubmit }) {
         updateFormErrors={setFormErrors}
         updateFormValues={setFormValues}
         validation={checkCreditCardNumber}
+        submitting={submitting}
+      />
+      <TextInput
+        type="text"
+        label="Pin de tarjeta"
+        name="ccPin"
+        updateFormErrors={setFormErrors}
+        updateFormValues={setFormValues}
+        validation={checkCreditCardPin}
         submitting={submitting}
       />
       <TextInput

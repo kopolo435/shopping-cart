@@ -169,4 +169,5 @@ export {
   checkAddress,
   checkMonthExpiration,
   checkYearExpiration,
+  checkCreditCardPin,
 };
