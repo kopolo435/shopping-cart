@@ -43,11 +43,23 @@ function HamburguerMenu() {
       </Button>
       <div data-testid="menuContainer" className={`sideBarContainer ${status}`}>
         <nav className="sideBarContent">
-          <Link to="/">Home</Link>
-          <Link to="/dulces">Dulces</Link>
-          <Link to="/cupcakes">Cupcakes</Link>
-          <Link to="/postresHelados">Postres Helados</Link>
-          <Link to="/kpops">K-pop</Link>
+          <ul>
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="category/dulces">Dulces</Link>
+            </li>
+            <li>
+              <Link to="category/cupcakes">Cupcakes</Link>
+            </li>
+            <li>
+              <Link to="category/postresHelados">Postres helados</Link>
+            </li>
+            <li>
+              <Link to="category/kpops">K-pops</Link>
+            </li>
+          </ul>
         </nav>
       </div>
     </>
