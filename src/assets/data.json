@@ -1,0 +1,28 @@
+{
+  "categories": [
+    {
+      "name": "Dulces",
+      "description": "Los dulces mas delicioso",
+      "link": "/dulces",
+      "img": "url/dulces"
+    },
+    {
+      "name": "Cupcakes",
+      "description": "Los cupcakes mas deliciosos",
+      "link": "/cupcakes",
+      "img": "url/cupcake"
+    },
+    {
+      "name": "Postres helados",
+      "description": "Los postres helados mas congelantes",
+      "link": "/postresHelados",
+      "img": "url/postreHelado"
+    },
+    {
+      "name": "K-pop",
+      "description": "Los K-pops mas deliciosos",
+      "link": "/kpops",
+      "img": "url/kpop"
+    }
+  ]
+}
