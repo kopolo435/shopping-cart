@@ -24,5 +24,38 @@
       "link": "/kpops",
       "img": "url/kpop"
     }
-  ]
+  ],
+  "categoryInfo": {
+    "dulces": {
+      "title": "lorem5",
+      "img": "url/dulces",
+      "description": "Los dulces mas delicioso, estan fabricados con esto y aquello",
+      "items": [
+        {
+          "id": "1",
+          "name": "Dulce de dos pisos",
+          "img": "url/dulce",
+          "description": "dulce de dos pisos con relleno",
+          "link": "2"
+        },
+        {
+          "id": "2",
+          "name": "Dulce de tres pisos",
+          "img": "url/dulce",
+          "description": "dulce de tres pisos con relleno",
+          "link": "2"
+        },
+        {
+          "id": "3",
+          "name": "Dulce de cuatro pisos",
+          "img": "url/dulce",
+          "description": "dulce de cuatro pisos con relleno",
+          "link": "2"
+        }
+      ]
+    },
+    "cupcakes": {},
+    "postresHelados": {},
+    "kpops": {}
+  }
 }
