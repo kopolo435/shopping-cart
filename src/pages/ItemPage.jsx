@@ -24,8 +24,8 @@ function ItemPage() {
             <img src={itemData.img} alt="" />
           </div>
           <div className="itemInformation">
-            <h1>{itemData.name}</h1>
-            <p>{itemData.description}</p>
+            <h1>{itemData.cardTitle}</h1>
+            <p>{itemData.longDescription}</p>
           </div>
         </main>
       ) : (

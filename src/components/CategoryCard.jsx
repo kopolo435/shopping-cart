@@ -4,13 +4,13 @@ import React from "react";
 
 function CategoryCard({ data }) {
   return (
-    <Link to={data.link}>
+    <Link to={data.pageLink}>
       <div className="cardImg">
         <img src={data.img} alt="" />
       </div>
       <div className="cardContent">
-        <h3>{data.name}</h3>
-        <p>{data.description}</p>
+        <h3>{data.cardTitle}</h3>
+        <p>{data.shortDescription}</p>
       </div>
     </Link>
   );
@@ -18,9 +18,9 @@ function CategoryCard({ data }) {
 
 CategoryCard.propTypes = {
   data: PropTypes.shape({
-    name: PropTypes.string.isRequired,
-    description: PropTypes.string.isRequired,
-    link: PropTypes.string.isRequired,
+    cardTitle: PropTypes.string.isRequired,
+    shortDescription: PropTypes.string.isRequired,
+    pageLink: PropTypes.string.isRequired,
     img: PropTypes.string.isRequired,
   }).isRequired,
 };

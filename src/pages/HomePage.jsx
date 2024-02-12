@@ -11,7 +11,11 @@ function HomePage() {
   const [categories, setCategories] = React.useState(null);
 
   useEffect(() => {
-    setCategories(data.categories);
+    const tempMap = new Map();
+    data.categories.forEach((category) => {
+      tempMap.set(category, data.categoryInfo[category]);
+    });
+    setCategories(tempMap);
   }, []);
 
   return (
@@ -33,8 +37,11 @@ function HomePage() {
         <hr />
         <div className="productsCategories">
           {categories ? (
-            categories.map((categoryData) => (
-              <CategoryCard key={categoryData.link} data={categoryData} />
+            data.categories.map((categoryName) => (
+              <CategoryCard
+                key={categoryName}
+                data={categories.get(categoryName)}
+              />
             ))
           ) : (
             <p>Cargando categorias</p>
