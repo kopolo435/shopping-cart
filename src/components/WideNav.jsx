@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import data from "../assets/data.json";
 
 function WideNav() {
   return (
@@ -9,16 +10,18 @@ function WideNav() {
           <Link to="/">Home</Link>
         </li>
         <li>
-          <Link to="/dulces">Dulces</Link>
+          <Link to={data.categoryInfo.dulces.pageLink}>Dulces</Link>
         </li>
         <li>
-          <Link to="/cupcakes">Cupcakes</Link>
+          <Link to={data.categoryInfo.cupcakes.pageLink}>Cupcakes</Link>
         </li>
         <li>
-          <Link to="/postresHelados">Postres helados</Link>
+          <Link to={data.categoryInfo.postreshelados.pageLink}>
+            Postres helados
+          </Link>
         </li>
         <li>
-          <Link to="/kpops">K-pops</Link>
+          <Link to={data.categoryInfo.kpops.pageLink}>K-pops</Link>
         </li>
       </ul>
     </nav>
