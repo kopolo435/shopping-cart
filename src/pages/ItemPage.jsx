@@ -14,7 +14,6 @@ function saveInLocalStorage(id, quantity) {
     cartList[id] = quantity;
   }
   localStorage.setItem("cartList", JSON.stringify(cartList));
-  console.log(localStorage.getItem("cartList"));
 }
 
 function ItemPage({ saveToCart }) {
