@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 import SpanIcon from "./SpanIcon";
 import Button from "./Button";
 import CartListDisplay from "./CartListDisplay";
@@ -73,6 +74,7 @@ function ShoppinCart({ itemList }) {
             </>
           )}
         </div>
+        <Link to="/cart/checkout">Pagar articulos</Link>
       </div>
     </>
   );
