@@ -8,7 +8,7 @@ function ShoppingItem({ item, deleteItem }) {
       <img src={item.img} alt={item.alt} />
       <div className="content">
         <div className="top">
-          <h3>{item.name}</h3>
+          <h3>{item.cardTitle}</h3>
           <Button
             onClick={() => deleteItem(item.id)}
             type="button"
@@ -19,7 +19,7 @@ function ShoppingItem({ item, deleteItem }) {
           </Button>
         </div>
         <div className="text">
-          <p>{item.description}</p>
+          <p>{item.shortDescription}</p>
           <p>{item.quantity} unidades</p>
         </div>
       </div>
@@ -29,12 +29,12 @@ function ShoppingItem({ item, deleteItem }) {
 
 ShoppingItem.propTypes = {
   item: PropTypes.shape({
-    name: PropTypes.string.isRequired,
-    quantity: PropTypes.number.isRequired,
+    cardTitle: PropTypes.string.isRequired,
+    quantity: PropTypes.string.isRequired,
     id: PropTypes.string.isRequired,
     img: PropTypes.string.isRequired,
     alt: PropTypes.string.isRequired,
-    description: PropTypes.string.isRequired,
+    shortDescription: PropTypes.string.isRequired,
   }).isRequired,
   deleteItem: PropTypes.func.isRequired,
 };
