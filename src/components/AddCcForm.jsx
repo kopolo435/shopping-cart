@@ -30,14 +30,13 @@ function AddCcForm({ onSubmit }) {
       });
       setTimeout(() => {
         if (currentErrorsSize === 0) {
-          onSubmit();
+          onSubmit(FormValues);
         }
-        console.log(formErrors);
       }, 0);
 
       setSubmitting(false);
     }
-  }, [submitting, setFormErrors, onSubmit]);
+  }, [submitting, setFormErrors, onSubmit, FormValues]);
 
   return (
     <form onSubmit={handleSubmit} noValidate>
