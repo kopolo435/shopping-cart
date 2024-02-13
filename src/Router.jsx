@@ -6,6 +6,7 @@ import ErrorPage from "./pages/ErroPage";
 import ItemPage from "./pages/ItemPage";
 import Checkout from "./pages/Checkout";
 import Authentication from "./pages/Authentication";
+import ProtectedRoute from "./routes/ProtectedRoute";
 
 function Router() {
   const router = createBrowserRouter([
@@ -28,7 +29,11 @@ function Router() {
     },
     {
       path: "/cart/checkout",
-      element: <Checkout />,
+      element: (
+        <ProtectedRoute>
+          <Checkout />
+        </ProtectedRoute>
+      ),
     },
   ]);
 

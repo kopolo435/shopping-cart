@@ -44,6 +44,7 @@ function Authentication() {
       );
     } else {
       setNotification("Inicio de sesion exitoso, redireccionando a Home");
+      localStorage.setItem("login", JSON.stringify("true"));
       setTimeout(() => {
         navigate("/");
         setNotification("");
