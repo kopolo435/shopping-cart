@@ -4,13 +4,28 @@ import SpanIcon from "./SpanIcon";
 import Button from "./Button";
 import ShoppingItem from "./ShoppingItem";
 
-function ShoppinCart({ itemList, deleteItem }) {
+function ShoppinCart({ itemList }) {
+  const initialItemList = itemList;
   const [status, setStatus] = React.useState("hide");
+  const [cartList, setCartList] = React.useState(new Map([...initialItemList]));
   function closeMenu() {
     setStatus("hiding");
     setTimeout(() => {
       setStatus("hide");
     }, 500);
+  }
+
+  React.useEffect(() => {
+    setCartList(new Map([...initialItemList]));
+  }, [initialItemList]);
+
+  function deleteItem(id) {
+    const tempMap = new Map([...cartList]);
+    const tempCartListObj = JSON.parse(localStorage.getItem("cartList"));
+    delete tempCartListObj[id];
+    tempMap.delete(id);
+    localStorage.setItem("cartList", JSON.stringify(tempCartListObj));
+    setCartList(tempMap);
   }
 
   function openMenu() {
@@ -46,15 +61,15 @@ function ShoppinCart({ itemList, deleteItem }) {
         </Button>
         <h2>Tu carro de compras</h2>
         <div className="itemsContainer">
-          {itemList.size < 1 ? (
+          {cartList.size < 1 ? (
             <p>Todavia no se ha agregado nada</p>
           ) : (
             <>
               <p>
                 Posee
-                {itemList.size} productos en su carro
+                {cartList.size} productos en su carro
               </p>
-              {Array.from(itemList.values()).map((item) => (
+              {Array.from(cartList.values()).map((item) => (
                 <ShoppingItem
                   key={item.id}
                   item={item}
@@ -71,7 +86,6 @@ function ShoppinCart({ itemList, deleteItem }) {
 
 ShoppinCart.propTypes = {
   itemList: PropTypes.object.isRequired,
-  deleteItem: PropTypes.func.isRequired,
 };
 
 export default ShoppinCart;

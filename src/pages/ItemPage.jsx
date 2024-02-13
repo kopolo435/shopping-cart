@@ -32,7 +32,7 @@ function saveInLocalStorage(id, quantity) {
 
 function ItemPage({ saveToCart }) {
   const [itemMap, setItemMap] = React.useState(new Map());
-  const [cartList, setCartList] = React.useState(null);
+  const [cartList, setCartList] = React.useState(new Map());
   const [quantity, setQuantity] = React.useState(0);
   const { id } = useParams();
   React.useEffect(() => {
@@ -54,6 +54,7 @@ function ItemPage({ saveToCart }) {
   return (
     <>
       <Header />
+      <ShoppinCart itemList={cartList} />
       {itemData ? (
         <main>
           <div className="itemImg">
