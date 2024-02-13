@@ -119,11 +119,15 @@ function ConfirmPasswordInput({
 ConfirmPasswordInput.propTypes = {
   label: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
-  passwordValue: PropTypes.string.isRequired,
+  passwordValue: PropTypes.string,
   updateFormErrors: PropTypes.func.isRequired,
   updateFormValues: PropTypes.func.isRequired,
   validation: PropTypes.func.isRequired,
-  submitting: PropTypes.string.isRequired,
+  submitting: PropTypes.bool.isRequired,
+};
+
+ConfirmPasswordInput.defaultProps = {
+  passwordValue: "",
 };
 
 export default ConfirmPasswordInput;

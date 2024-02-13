@@ -94,7 +94,7 @@ TextInput.propTypes = {
   updateFormErrors: PropTypes.func.isRequired,
   updateFormValues: PropTypes.func.isRequired,
   validation: PropTypes.func.isRequired,
-  submitting: PropTypes.string.isRequired,
+  submitting: PropTypes.bool.isRequired,
 };
 
 export default TextInput;
