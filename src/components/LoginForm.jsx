@@ -6,7 +6,7 @@ import Button from "./Button";
 
 function LoginForm({ onSubmit }) {
   const [formErrors, setFormErrors] = React.useState(new Map());
-  const [updateFormValues, setFormValues] = React.useState(new Map());
+  const [formValues, setFormValues] = React.useState(new Map());
   const [submitting, setSubmitting] = React.useState(false);
 
   function handleSubmit(event) {
@@ -25,13 +25,13 @@ function LoginForm({ onSubmit }) {
 
       setTimeout(() => {
         if (currentErrorsSize === 0) {
-          onSubmit();
+          onSubmit(formValues);
         }
       }, 0);
 
       setSubmitting(false);
     }
-  }, [submitting, setFormErrors, onSubmit]);
+  }, [submitting, setFormErrors, onSubmit, formValues]);
 
   return (
     <form onSubmit={handleSubmit} noValidate>

@@ -31,13 +31,13 @@ function RegisterUserForm({ onSubmit }) {
 
       setTimeout(() => {
         if (currentErrorsSize === 0) {
-          onSubmit();
+          onSubmit(formValues);
         }
       }, 0);
 
       setSubmitting(false);
     }
-  }, [submitting, setFormErrors, onSubmit]);
+  }, [submitting, setFormErrors, onSubmit, formValues]);
 
   return (
     <form noValidate onSubmit={handleSubmit}>
