@@ -7,7 +7,7 @@ function ProtectedRoute({ children }) {
 
   React.useEffect(() => {
     if (!isLogin) {
-      navigate("/session-timed-out", { replace: true });
+      navigate("/authentication/login", { replace: true });
     }
   }, [isLogin]);
 

@@ -5,6 +5,7 @@ import Footer from "../components/Footer";
 import ShoppinCart from "../components/ShoppingCart";
 import CardDisplay from "../components/CardDisplay";
 import AddCcForm from "../components/AddCcForm";
+import CartListDisplay from "../components/CartListDisplay";
 
 function getCartItems(itemMap) {
   const cartList = JSON.parse(localStorage.getItem("cartList"));
@@ -37,6 +38,15 @@ function Checkout() {
 
   function showAddCreditCardModal() {
     setAddCreditCardMoldal(true);
+  }
+
+  function deleteItem(id) {
+    const tempMap = new Map([...cartList]);
+    const tempCartListObj = JSON.parse(localStorage.getItem("cartList"));
+    delete tempCartListObj[id];
+    tempMap.delete(id);
+    localStorage.setItem("cartList", JSON.stringify(tempCartListObj));
+    setCartList(tempMap);
   }
 
   function saveCreditCardInformation(values) {
@@ -77,7 +87,7 @@ function Checkout() {
             <AddCcForm onSubmit={saveCreditCardInformation} />
           )}
           <h1>Articulos en el carro</h1>
-          <ShoppinCart itemList={cartList} />
+          <CartListDisplay cartList={cartList} deleteItem={deleteItem} />
           <CardDisplay
             cardData={JSON.parse(localStorage.getItem("creditCard"))}
             addCardOnclick={() => showAddCreditCardModal()}

@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import SpanIcon from "./SpanIcon";
 import Button from "./Button";
-import ShoppingItem from "./ShoppingItem";
+import CartListDisplay from "./CartListDisplay";
 
 function ShoppinCart({ itemList }) {
   const initialItemList = itemList;
@@ -69,13 +69,7 @@ function ShoppinCart({ itemList }) {
                 Posee
                 {cartList.size} productos en su carro
               </p>
-              {Array.from(cartList.values()).map((item) => (
-                <ShoppingItem
-                  key={item.id}
-                  item={item}
-                  deleteItem={deleteItem}
-                />
-              ))}
+              <CartListDisplay cartList={cartList} deleteItem={deleteItem} />
             </>
           )}
         </div>
