@@ -4,6 +4,7 @@ import CategoryPage from "./pages/CategoryPage";
 import HomePage from "./pages/HomePage";
 import ErrorPage from "./pages/ErroPage";
 import ItemPage from "./pages/ItemPage";
+import Checkout from "./pages/Checkout";
 import Authentication from "./pages/Authentication";
 
 function Router() {
@@ -24,6 +25,10 @@ function Router() {
     {
       path: "/authentication/:type",
       element: <Authentication />,
+    },
+    {
+      path: "/cart/checkout",
+      element: <Checkout />,
     },
   ]);
 
