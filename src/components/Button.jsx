@@ -23,7 +23,7 @@ function Button({ children, onClick, className, label, type }) {
 }
 
 Button.propTypes = {
-  children: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
+  children: PropTypes.any,
   onClick: PropTypes.func.isRequired,
   className: PropTypes.string.isRequired,
   label: PropTypes.string,
