@@ -5,6 +5,20 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Button from "../components/Button";
 import data from "../assets/data.json";
+import ShoppinCart from "../components/ShoppingCart";
+
+function getCartItems(itemMap) {
+  const cartList = JSON.parse(localStorage.getItem("cartList"));
+  const cartListMap = new Map();
+
+  Object.keys(cartList).forEach((key) => {
+    const value = cartList[key];
+    const itemData = { ...itemMap.get(key), quantity: value };
+    cartListMap.set(key, itemData);
+  });
+
+  return cartListMap;
+}
 
 function saveInLocalStorage(id, quantity) {
   const cartList = JSON.parse(localStorage.getItem("cartList"));
@@ -18,6 +32,7 @@ function saveInLocalStorage(id, quantity) {
 
 function ItemPage({ saveToCart }) {
   const [itemMap, setItemMap] = React.useState(new Map());
+  const [cartList, setCartList] = React.useState(null);
   const [quantity, setQuantity] = React.useState(0);
   const { id } = useParams();
   React.useEffect(() => {
@@ -26,14 +41,15 @@ function ItemPage({ saveToCart }) {
       tempMap.set(item.id, item);
     });
     setItemMap(tempMap);
+    setCartList(getCartItems(tempMap));
   }, []);
 
   function handleClick() {
     if (quantity > 0 && quantity < 1000) {
       saveToCart(id, quantity);
+      setCartList(getCartItems(itemMap));
     }
   }
-
   const itemData = itemMap.get(id) ? itemMap.get(id) : null;
   return (
     <>
