@@ -5,6 +5,7 @@ import ConfirmPasswordInput from "./ConfirmPasswordInput";
 import {
   confirmPasswordTest,
   emailInputTest,
+  nameInputTest,
   passwordTest,
 } from "../javascript/inputValidation";
 import Button from "./Button";
@@ -40,6 +41,15 @@ function RegisterUserForm({ onSubmit }) {
 
   return (
     <form noValidate onSubmit={handleSubmit}>
+      <TextInput
+        type="text"
+        label="Nombre"
+        name="nombre"
+        updateFormErrors={setFormErrors}
+        updateFormValues={setFormValues}
+        validation={nameInputTest}
+        submitting={submitting}
+      />
       <TextInput
         type="email"
         label="Correo"
