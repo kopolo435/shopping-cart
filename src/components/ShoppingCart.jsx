@@ -44,7 +44,7 @@ function ShoppinCart({ itemList }) {
           label="show shopping cart"
           className=""
         >
-          <SpanIcon iconName="open" />
+          <SpanIcon iconName="shopping_cart" />
         </Button>
         <p data-testid="itemAmmount">{itemList.size}</p>
       </div>

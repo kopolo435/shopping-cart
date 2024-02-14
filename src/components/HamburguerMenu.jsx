@@ -24,7 +24,7 @@ function HamburguerMenu() {
   }
 
   if (status === "hide" || status === "hiding") {
-    buttonData.content = <SpanIcon iconName="open" />;
+    buttonData.content = <SpanIcon iconName="menu" />;
     buttonData.name = "open sidebar";
     buttonData.func = openMenu;
   } else {
