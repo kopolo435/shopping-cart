@@ -6,19 +6,7 @@ import Footer from "../components/Footer";
 import Button from "../components/Button";
 import data from "../assets/data.json";
 import ShoppinCart from "../components/ShoppingCart";
-
-function getCartItems(itemMap) {
-  const cartList = JSON.parse(localStorage.getItem("cartList"));
-  const cartListMap = new Map();
-
-  Object.keys(cartList).forEach((key) => {
-    const value = cartList[key];
-    const itemData = { ...itemMap.get(key), quantity: value };
-    cartListMap.set(key, itemData);
-  });
-
-  return cartListMap;
-}
+import getCartItems from "../javascript/getCartItems";
 
 function saveInLocalStorage(id, quantity) {
   const cartList = JSON.parse(localStorage.getItem("cartList"));
