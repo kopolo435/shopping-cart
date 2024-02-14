@@ -42,7 +42,7 @@ function ShoppinCart({ itemList }) {
           type="button"
           onClick={openMenu}
           label="show shopping cart"
-          className=""
+          className="shoppingCartButton"
         >
           <SpanIcon iconName="shopping_cart" />
         </Button>

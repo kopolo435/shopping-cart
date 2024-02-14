@@ -1,3 +1,25 @@
 .shoppingCartContainer.hide {
   display: none;
 }
+
+.cartButtonContainer {
+  position: relative;
+
+  p {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 1px 5px;
+    background: aqua;
+    border-radius: 20px;
+  }
+}
+
+.shoppingCartButton {
+  background-color: transparent;
+  height: fit-content;
+  width: fit-content;
+  padding: 10px;
+  margin-left: -10px;
+  border: none;
+}

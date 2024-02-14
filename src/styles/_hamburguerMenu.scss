@@ -1,3 +1,15 @@
 .hamburguerContaiener.hide {
   display: none;
 }
+
+.toogleHamburguerMenu {
+  background-color: transparent;
+  height: fit-content;
+  width: fit-content;
+  padding: 10px;
+  border: none;
+}
+
+.toogleHamburguerMenu:active {
+  background-color: rgba(128, 128, 128, 0.425);
+}
