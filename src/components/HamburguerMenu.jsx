@@ -6,21 +6,26 @@ import data from "../assets/data.json";
 
 function HamburguerMenu() {
   const [status, setStatus] = React.useState("hide");
+  const [timeoutId, setTimeoutId] = React.useState(null);
 
   const buttonData = {};
 
   function closeMenu() {
     setStatus("hiding");
-    setTimeout(() => {
+    clearTimeout(timeoutId); // Clear any existing timeout
+    const newTimeoutId = setTimeout(() => {
       setStatus("hide");
     }, 500);
+    setTimeoutId(newTimeoutId); // Save the new timeout ID
   }
 
   function openMenu() {
     setStatus("showing");
-    setTimeout(() => {
+    clearTimeout(timeoutId);
+    const newTimeoutId = setTimeout(() => {
       setStatus("show");
     }, 500);
+    setTimeoutId(newTimeoutId);
   }
 
   if (status === "hide" || status === "hiding") {
