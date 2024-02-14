@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import Router from "./Router";
-import "./css/main.css";
+import "./css/app.css";
 
 function populateLocalStorage() {
   const cartList = JSON.parse(localStorage.getItem("cartList"));

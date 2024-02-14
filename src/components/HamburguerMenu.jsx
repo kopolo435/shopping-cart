@@ -37,13 +37,16 @@ function HamburguerMenu() {
       <Button
         type="button"
         onClick={buttonData.func}
-        className="sideBarBtn"
+        className="toogleHamburguerMenu"
         label={buttonData.name}
       >
         {buttonData.content}
       </Button>
-      <div data-testid="menuContainer" className={`sideBarContainer ${status}`}>
-        <nav className="sideBarContent">
+      <div
+        data-testid="menuContainer"
+        className={`hamburguerContaiener ${status}`}
+      >
+        <nav className="hamburguerNav">
           <ul>
             <li>
               <Link to="/">Home</Link>

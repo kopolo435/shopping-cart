@@ -1,0 +1,9 @@
+.wideNav {
+  display: none;
+}
+
+@media (min-width: 500px) {
+  .wideNav {
+    display: flex;
+  }
+}
