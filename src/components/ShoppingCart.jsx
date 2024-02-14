@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import SpanIcon from "./SpanIcon";
 import Button from "./Button";
 import CartListDisplay from "./CartListDisplay";
+import "../css/shoppingCart.css";
 
 function ShoppinCart({ itemList }) {
   const initialItemList = itemList;
