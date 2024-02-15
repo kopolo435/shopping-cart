@@ -14,3 +14,9 @@
 .toogleHamburguerMenu:active {
   background-color: rgba(128, 128, 128, 0.425);
 }
+
+@media (min-width: 500px) {
+  .toogleHamburguerMenu {
+    display: none;
+  }
+}
