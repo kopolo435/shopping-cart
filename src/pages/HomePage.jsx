@@ -4,6 +4,7 @@ import Footer from "../components/Footer";
 import WideNav from "../components/WideNav";
 import CategoryCard from "../components/CategoryCard";
 import data from "../assets/data.json";
+import logo from "../assets/img/logo/logoLetras.png";
 
 function HomePage() {
   const [categories, setCategories] = React.useState(null);
@@ -22,12 +23,17 @@ function HomePage() {
       <WideNav />
       <main>
         <div className="introduction">
-          <div className="imgContainer" />
+          <div className="imgContainer">
+            <img src={logo} alt="" />
+          </div>
           <div className="text">
-            <h1>Pasteleria Art Delish</h1>
+            <h1>¡Bienvenido a Arts Delish!</h1>
             <p>
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Labore,
-              corporis!
+              Con nuestros productos , disfrutarás de delicias artesanales que
+              te deleitarán. Desde tartas y pasteles exquisitos hasta galletas y
+              cupcakes irresistibles, cada producto está elaborado con
+              ingredientes frescos y amor. Haz tu pedido ahora y sumérgete en
+              nuestro dulce encanto.
             </p>
           </div>
         </div>

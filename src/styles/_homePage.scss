@@ -1,1 +1,31 @@
+.introduction {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
 
+.imgContainer {
+  display: flex;
+  justify-content: center;
+  img {
+    height: auto;
+    width: 200px;
+  }
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  p {
+    max-width: 35em;
+  }
+}
+
+@media (min-width: 700px) {
+  .introduction {
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
+  }
+}
