@@ -1,0 +1,41 @@
+.categoryInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+.categoryImg {
+  display: flex;
+  justify-content: center;
+  img {
+    height: auto;
+    width: 200px;
+  }
+}
+
+.categoryText {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  p {
+    max-width: 35em;
+  }
+}
+
+.itemsContainer {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 30px 20px;
+  gap: 30px;
+  margin-top: 20px;
+}
+
+@media (min-width: 700px) {
+  .categoryInfo {
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
+  }
+}

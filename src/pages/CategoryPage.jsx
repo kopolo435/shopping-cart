@@ -4,6 +4,7 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import data from "../assets/data.json";
 import CategoryCard from "../components/CategoryCard";
+import WideNav from "../components/WideNav";
 
 function CategoryPage() {
   const [info, setInfo] = React.useState(null);
@@ -21,6 +22,7 @@ function CategoryPage() {
   return (
     <>
       <Header />
+      <WideNav />
       {info ? (
         <main>
           <div className="categoryInfo">
@@ -28,10 +30,11 @@ function CategoryPage() {
               <img src={info.img} alt="" />
             </div>
             <div className="categoryText">
-              <h1>{info.title}</h1>
-              <p>{info.description}</p>
+              <h1>{info.pageTitle}</h1>
+              <p>{info.longDescription}</p>
             </div>
           </div>
+          <hr />
           <div className="itemsContainer">
             {info.items.map((itemId) => (
               <CategoryCard key={itemId} data={itemMap.get(itemId)} />
