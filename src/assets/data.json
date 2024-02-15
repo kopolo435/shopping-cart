@@ -48,7 +48,24 @@
       "shortDescription": "dulce de dos pisos con relleno",
       "longDescription": "Este dulce de tres pisos con rellenos solo se realiza por pedido especial",
       "pageLink": "1",
-      "price": "2"
+      "price": "2",
+      "imgList": [
+        {
+          "img": "src/assets/img/pasteles/dulce.jpg",
+          "alt": "",
+          "title": "Imagen 1"
+        },
+        {
+          "img": "src/assets/img/pasteles/dulce.jpg",
+          "alt": "",
+          "title": "Imagen 2"
+        },
+        {
+          "img": "src/assets/img/pasteles/dulce.jpg",
+          "alt": "",
+          "title": "Imagen 3"
+        }
+      ]
     },
     {
       "id": "2",
@@ -59,7 +76,24 @@
       "shortDescription": "dulce de tres pisos con relleno",
       "longDescription": "Este dulce de tres pisos con rellenos solo se realiza por pedido especial",
       "pageLink": "2",
-      "price": "2"
+      "price": "2",
+      "imgList": [
+        {
+          "img": "src/assets/img/pasteles/dulce.jpg",
+          "alt": "",
+          "title": "Imagen 1"
+        },
+        {
+          "img": "src/assets/img/pasteles/dulce.jpg",
+          "alt": "",
+          "title": "Imagen 2"
+        },
+        {
+          "img": "src/assets/img/pasteles/dulce.jpg",
+          "alt": "",
+          "title": "Imagen 3"
+        }
+      ]
     },
     {
       "id": "3",
@@ -70,7 +104,24 @@
       "shortDescription": "dulce de cuatro pisos con relleno",
       "longDescription": "Este dulce de tres pisos con rellenos solo se realiza por pedido especial",
       "pageLink": "3",
-      "price": "2"
+      "price": "2",
+      "imgList": [
+        {
+          "img": "src/assets/img/pasteles/dulce.jpg",
+          "alt": "",
+          "title": "Imagen 1"
+        },
+        {
+          "img": "src/assets/img/pasteles/dulce.jpg",
+          "alt": "",
+          "title": "Imagen 2"
+        },
+        {
+          "img": "src/assets/img/pasteles/dulce.jpg",
+          "alt": "",
+          "title": "Imagen 3"
+        }
+      ]
     }
   ]
 }
