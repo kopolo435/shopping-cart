@@ -4,7 +4,7 @@ import React from "react";
 
 function CategoryCard({ data }) {
   return (
-    <Link to={data.pageLink}>
+    <Link to={data.pageLink} className="categoryCard">
       <div className="cardImg">
         <img src={data.img} alt="" />
       </div>

@@ -1,0 +1,21 @@
+.categoryCard {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: var(--pink-900);
+  width: 200px;
+}
+
+.cardImg {
+  margin-bottom: -5px;
+  img {
+    width: 100%;
+    height: 200px;
+  }
+}
+
+.cardContent {
+  padding: 10px 15px;
+  background-color: aquamarine;
+  flex: 1;
+}
