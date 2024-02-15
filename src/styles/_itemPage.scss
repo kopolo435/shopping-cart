@@ -1,0 +1,38 @@
+.itemInfoContainer {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding-bottom: 20px;
+  flex: 1;
+}
+
+.itemContaienr {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.itemInformation {
+  min-height: 150px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.addToCart {
+  display: flex;
+  justify-content: space-around;
+
+  label {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  button {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+}
