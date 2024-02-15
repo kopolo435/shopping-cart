@@ -1,5 +1,18 @@
 .wideNav {
   display: none;
+  margin-left: -20px;
+  margin-bottom: 20px;
+  background-color: var(--pink-500);
+  width: 100vw;
+
+  ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    flex: 1;
+    max-width: 500px;
+    padding: 10px 20px;
+  }
 }
 
 @media (min-width: 500px) {
