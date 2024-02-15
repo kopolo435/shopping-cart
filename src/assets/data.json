@@ -4,7 +4,7 @@
     "dulces": {
       "pageTitle": "lorem5",
       "cardTitle": "Dulces",
-      "img": "url/dulces",
+      "img": "src/assets/img/pasteles/dulce.jpg",
       "longDescription": "Los dulces mas delicioso, estan fabricados con esto y aquello",
       "shortDescription": "Los dulces mas delicioso",
       "pageLink": "/dulces",
@@ -13,7 +13,7 @@
     "cupcakes": {
       "pageTitle": "Cupcakes",
       "cardTitle": "Cupcakes",
-      "img": "url/cupcake",
+      "img": "src/assets/img/pasteles/dulce.jpg",
       "longDescription": "Los dulces mas delicioso, estan fabricados con esto y aquello",
       "shortDescription": "Los dulces mas delicioso",
       "pageLink": "/cupcakes",
@@ -22,16 +22,16 @@
     "postreshelados": {
       "pageTitle": "Postres helados",
       "cardTitle": "Postres helados",
-      "img": "url/cupcake",
+      "img": "src/assets/img/pasteles/dulce.jpg",
       "longDescription": "Los dulces mas delicioso, estan fabricados con esto y aquello",
-      "shortDescription": "Los dulces mas delicioso",
+      "shortDescription": "Los dulces mas deliciosos, preparados como tu decidas",
       "pageLink": "/postreshelados",
       "items": ["1", "2", "3"]
     },
     "kpops": {
       "pageTitle": "Kpops",
       "cardTitle": "Kpops",
-      "img": "url/cupcake",
+      "img": "src/assets/img/pasteles/dulce.jpg",
       "longDescription": "Los dulces mas delicioso, estan fabricados con esto y aquello",
       "shortDescription": "Los dulces mas delicioso",
       "pageLink": "/kpops",
