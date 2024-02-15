@@ -30,7 +30,7 @@ function ShoppingItem({ item, deleteItem }) {
 ShoppingItem.propTypes = {
   item: PropTypes.shape({
     cardTitle: PropTypes.string.isRequired,
-    quantity: PropTypes.number.isRequired,
+    quantity: PropTypes.any.isRequired,
     id: PropTypes.string.isRequired,
     img: PropTypes.string.isRequired,
     alt: PropTypes.string.isRequired,
