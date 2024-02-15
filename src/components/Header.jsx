@@ -6,16 +6,29 @@ import getCartItems from "../javascript/getCartItems";
 import data from "../assets/data.json";
 import logo from "../assets/img/logo/logoMinimalista.png";
 
-function Header() {
+function Header({ initialCartList }) {
   const [cartList, setCartList] = React.useState(null);
 
+  function deleteItem(id) {
+    const tempMap = new Map([...cartList]);
+    const tempCartListObj = JSON.parse(localStorage.getItem("cartList"));
+    delete tempCartListObj[id];
+    tempMap.delete(id);
+    localStorage.setItem("cartList", JSON.stringify(tempCartListObj));
+    setCartList(tempMap);
+  }
+
   React.useEffect(() => {
-    const tempMap = new Map();
-    data.itemList.forEach((item) => {
-      tempMap.set(item.id, item);
-    });
-    setCartList(getCartItems(tempMap));
-  }, []);
+    if (!initialCartList) {
+      const tempMap = new Map();
+      data.itemList.forEach((item) => {
+        tempMap.set(item.id, item);
+      });
+      setCartList(getCartItems(tempMap));
+    } else {
+      setCartList(getCartItems(initialCartList));
+    }
+  }, [initialCartList]);
 
   return (
     <header>
@@ -26,7 +39,7 @@ function Header() {
           <span>Arts Delish</span>
         </Link>
       </div>
-      {cartList && <ShoppinCart itemList={cartList} />}
+      {cartList && <ShoppinCart itemList={cartList} deleteItem={deleteItem} />}
     </header>
   );
 }

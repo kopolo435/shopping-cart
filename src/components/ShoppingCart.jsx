@@ -5,7 +5,7 @@ import SpanIcon from "./SpanIcon";
 import Button from "./Button";
 import CartListDisplay from "./CartListDisplay";
 
-function ShoppinCart({ itemList }) {
+function ShoppinCart({ itemList, deleteItem }) {
   const initialItemList = itemList;
   const [status, setStatus] = React.useState("hide");
   const [cartList, setCartList] = React.useState(new Map([...initialItemList]));
@@ -19,15 +19,6 @@ function ShoppinCart({ itemList }) {
   React.useEffect(() => {
     setCartList(new Map([...initialItemList]));
   }, [initialItemList]);
-
-  function deleteItem(id) {
-    const tempMap = new Map([...cartList]);
-    const tempCartListObj = JSON.parse(localStorage.getItem("cartList"));
-    delete tempCartListObj[id];
-    tempMap.delete(id);
-    localStorage.setItem("cartList", JSON.stringify(tempCartListObj));
-    setCartList(tempMap);
-  }
 
   function openMenu() {
     setStatus("showing");
@@ -82,6 +73,7 @@ function ShoppinCart({ itemList }) {
 
 ShoppinCart.propTypes = {
   itemList: PropTypes.object.isRequired,
+  deleteItem: PropTypes.func.isRequired,
 };
 
 export default ShoppinCart;
