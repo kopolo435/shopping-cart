@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Button from "./Button";
+import SpanIcon from "./SpanIcon";
 
 function ImgCarousell({ imgList }) {
   const [currentImgIndex, setCurrentImgIndex] = React.useState(0);
@@ -30,7 +31,7 @@ function ImgCarousell({ imgList }) {
           className="carousellBtn"
           label="show previous image"
         >
-          left
+          <SpanIcon iconName="chevron_left" />
         </Button>
         <div className="carousellContent">
           <div className="imgContainer">
@@ -38,15 +39,16 @@ function ImgCarousell({ imgList }) {
               if (index === currentImgIndex) {
                 return (
                   <img
-                    src={imgData.src}
+                    src={`/${imgData.img}`}
                     key={index}
                     alt={imgData.alt}
                     data-testid="currentImg"
+                    className="showImg"
                   />
                 );
               }
-
-              return <img key={index} src={imgData.src} alt={imgData.alt} />;
+              console.log(imgData.img);
+              return <img key={index} src={imgData.img} alt={imgData.alt} />;
             })}
           </div>
           <h3 data-testid="currentImgTitle">
@@ -59,7 +61,7 @@ function ImgCarousell({ imgList }) {
           className="carousellBtn"
           label="show next image"
         >
-          left
+          <SpanIcon iconName="chevron_right" />
         </Button>
       </div>
       <div className="imgControl">
@@ -69,7 +71,7 @@ function ImgCarousell({ imgList }) {
               <Button
                 type="button"
                 content=""
-                className="chooseImg"
+                className="chooseImg currentButton"
                 onClick={() => setCurrentImgIndex(index)}
                 label={`show image ${index}`}
                 key={index}

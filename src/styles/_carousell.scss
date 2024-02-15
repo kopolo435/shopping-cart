@@ -1,0 +1,54 @@
+.carousellTop {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  align-items: center;
+  .imgContainer {
+    img {
+      height: auto;
+      width: 200px;
+      display: none;
+    }
+
+    img.showImg {
+      display: inline;
+    }
+  }
+}
+
+.carousellContent {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  h3 {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.carousellBtn {
+  background-color: transparent;
+  border: none;
+}
+
+.carousellBtn:active {
+  background-color: rgba(128, 128, 128, 0.425);
+}
+
+.imgControl {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.chooseImg {
+  background-color: white;
+  border: 1px solid black;
+  height: 15px;
+  width: 15px;
+  border-radius: 30px;
+}
+
+.chooseImg.currentButton {
+  background-color: gray;
+}
