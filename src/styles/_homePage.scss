@@ -22,6 +22,12 @@
   }
 }
 
+hr {
+  border: none;
+  height: 15px;
+  background-color: var(--pink-500);
+}
+
 @media (min-width: 700px) {
   .introduction {
     flex-direction: row;
