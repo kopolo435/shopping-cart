@@ -47,7 +47,6 @@ function ImgCarousell({ imgList }) {
                   />
                 );
               }
-              console.log(imgData.img);
               return <img key={index} src={imgData.img} alt={imgData.alt} />;
             })}
           </div>
