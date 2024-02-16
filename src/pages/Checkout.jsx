@@ -81,41 +81,43 @@ function Checkout() {
 
   return (
     <>
-      <Header />
+      <Header initialCartList={cartList} />
       <WideNav />
-      {cartList.size > 0 ? (
-        <main className="checkoutContainer">
-          {addCreditCardModal && (
-            <AddCcForm onSubmit={saveCreditCardInformation} />
-          )}
-          <div className="cartItems">
-            <h1>Articulos en el carro</h1>
+      <main className="checkoutContainer">
+        {addCreditCardModal && (
+          <AddCcForm onSubmit={saveCreditCardInformation} />
+        )}
+        <div className="cartItems">
+          <h1>Articulos en el carro</h1>
+          {cartList.size > 0 ? (
             <CartListDisplay cartList={cartList} deleteItem={deleteItem} />
-          </div>
-          <div className="paymentInfo">
-            <h2>Tarjeta de credio a usar</h2>
-            <CardDisplay
-              cardData={JSON.parse(localStorage.getItem("creditCard"))}
-              addCardOnclick={() => showAddCreditCardModal()}
-            />
-            <h2>Precio total a pagar</h2>
-            <p>
-              Productos:
-              <span>{` ${totalPrice}`}</span>
-            </p>
-            <p>
-              Impuestos:
-              <span>{` ${taxValue}`}</span>
-            </p>
-            <p>
-              Total a pagar:
-              <span>{` ${Number(totalPrice) + Number(taxValue)}`}</span>
-            </p>
-          </div>
-        </main>
-      ) : (
-        <main>Cargando informacion</main>
-      )}
+          ) : (
+            <div className="emptyCartList">
+              <p>No ha agregado articulos</p>
+            </div>
+          )}
+        </div>
+        <div className="paymentInfo">
+          <h2>Tarjeta de credio a usar</h2>
+          <CardDisplay
+            cardData={JSON.parse(localStorage.getItem("creditCard"))}
+            addCardOnclick={() => showAddCreditCardModal()}
+          />
+          <h2>Precio total a pagar</h2>
+          <p>
+            Productos:
+            <span>{` ${totalPrice}`}</span>
+          </p>
+          <p>
+            Impuestos:
+            <span>{` ${taxValue}`}</span>
+          </p>
+          <p>
+            Total a pagar:
+            <span>{` ${Number(totalPrice) + Number(taxValue)}`}</span>
+          </p>
+        </div>
+      </main>
       <Footer />
     </>
   );
