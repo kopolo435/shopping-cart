@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import SpanIcon from "./SpanIcon";
 import Button from "./Button";
 import CartListDisplay from "./CartListDisplay";
+import { setModalFocus, wrapTabOrder } from "../javascript/modalAccesibility";
 
 function ShoppinCart({ itemList, deleteItem }) {
   const initialItemList = itemList;
@@ -24,10 +25,18 @@ function ShoppinCart({ itemList, deleteItem }) {
     setStatus("showing");
     setTimeout(() => {
       setStatus("show");
+      const shoppingCartModal = document.querySelector(
+        ".shoppingCartContainer"
+      );
+      setModalFocus(shoppingCartModal);
+      shoppingCartModal.addEventListener("keydown", (event) => {
+        wrapTabOrder(event, shoppingCartModal);
+      });
     }, 100);
   }
   return (
     <>
+      <div className={`backdrop ${status}`} />
       <div className="cartButtonContainer">
         <Button
           type="button"
