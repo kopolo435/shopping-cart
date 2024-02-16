@@ -24,7 +24,7 @@ function ShoppinCart({ itemList, deleteItem }) {
     setStatus("showing");
     setTimeout(() => {
       setStatus("show");
-    }, 500);
+    }, 100);
   }
   return (
     <>
@@ -52,19 +52,21 @@ function ShoppinCart({ itemList, deleteItem }) {
           <SpanIcon iconName="close" />{" "}
         </Button>
         <h2>Tu carro de compras</h2>
-        <div className="itemsContainer">
-          {cartList.size < 1 ? (
-            <p>Todavia no se ha agregado nada</p>
-          ) : (
-            <>
-              <p>
-                Posee
-                {cartList.size} productos en su carro
-              </p>
-              <CartListDisplay cartList={cartList} deleteItem={deleteItem} />
-            </>
-          )}
-        </div>
+        {cartList.size < 1 ? (
+          <p>Todavia no se ha agregado nada</p>
+        ) : (
+          <>
+            <p>
+              Posee
+              {` ${cartList.size}`} productos en su carro
+            </p>
+            <div className="listContainer">
+              <div className="cartItemsListContainer">
+                <CartListDisplay cartList={cartList} deleteItem={deleteItem} />
+              </div>
+            </div>
+          </>
+        )}
         <Link to="/cart/checkout">Pagar articulos</Link>
       </div>
     </>
