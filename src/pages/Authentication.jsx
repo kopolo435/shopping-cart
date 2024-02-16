@@ -1,9 +1,10 @@
 import React from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate, Link } from "react-router-dom";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import LoginForm from "../components/LoginForm";
 import RegisterForm from "../components/RegisterForm";
+import WideNav from "../components/WideNav";
 
 function Authentication() {
   const { type } = useParams();
@@ -55,14 +56,31 @@ function Authentication() {
   return (
     <>
       <Header />
-      <main>
-        {notification !== "" && (
-          <div className="authNotification">{notification}</div>
-        )}
+      <WideNav />
+      <main className="authMain">
         {type === "login" ? (
-          <LoginForm onSubmit={handleLogin} />
+          <div className="formContainer">
+            <h1>Iniciar sesion</h1>
+            <LoginForm onSubmit={handleLogin} />
+            <p>
+              No tienes una cuenta?{" "}
+              <Link to="/authentication/singup">Registrate aqui</Link>
+            </p>
+          </div>
         ) : (
-          <RegisterForm onSubmit={handleRegister} />
+          <div className="formContainer">
+            <h1>Registrarse</h1>
+            <RegisterForm onSubmit={handleRegister} />
+            <p>
+              Ya te registrarste?{" "}
+              <Link to="/authentication/login">Inicia sesion aqui</Link>
+            </p>
+          </div>
+        )}
+        {notification !== "" && (
+          <div className="authNotification">
+            <p>{notification}</p>
+          </div>
         )}
       </main>
       <Footer />

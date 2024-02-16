@@ -40,7 +40,7 @@ function RegisterUserForm({ onSubmit }) {
   }, [submitting, setFormErrors, onSubmit, formValues]);
 
   return (
-    <form noValidate onSubmit={handleSubmit}>
+    <form noValidate className="registerForm" onSubmit={handleSubmit}>
       <TextInput
         type="text"
         label="Nombre"

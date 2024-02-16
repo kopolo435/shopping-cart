@@ -34,7 +34,7 @@ function LoginForm({ onSubmit }) {
   }, [submitting, setFormErrors, onSubmit, formValues]);
 
   return (
-    <form onSubmit={handleSubmit} noValidate>
+    <form onSubmit={handleSubmit} className="loginForm" noValidate>
       <TextInput
         type="email"
         label="Correo"
