@@ -1,0 +1,23 @@
+.addCardButton {
+  padding: 30px;
+  border: 2px dashed;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.cardContainer {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.cardInfoContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.useAnotherCard {
+  align-self: flex-start;
+}

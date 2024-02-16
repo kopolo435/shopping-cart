@@ -2,7 +2,7 @@ import React from "react";
 import data from "../assets/data.json";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import ShoppinCart from "../components/ShoppingCart";
+import Button from "../components/Button";
 import CardDisplay from "../components/CardDisplay";
 import AddCcForm from "../components/AddCcForm";
 import CartListDisplay from "../components/CartListDisplay";
@@ -98,24 +98,31 @@ function Checkout() {
           )}
         </div>
         <div className="paymentInfo">
-          <h2>Tarjeta de credio a usar</h2>
-          <CardDisplay
-            cardData={JSON.parse(localStorage.getItem("creditCard"))}
-            addCardOnclick={() => showAddCreditCardModal()}
-          />
-          <h2>Precio total a pagar</h2>
-          <p>
-            Productos:
-            <span>{` ${totalPrice}`}</span>
-          </p>
-          <p>
-            Impuestos:
-            <span>{` ${taxValue}`}</span>
-          </p>
-          <p>
-            Total a pagar:
-            <span>{` ${Number(totalPrice) + Number(taxValue)}`}</span>
-          </p>
+          <div className="paymentInforCard">
+            <h2>Tarjeta de credio a usar</h2>
+            <CardDisplay
+              cardData={JSON.parse(localStorage.getItem("creditCard"))}
+              addCardOnclick={() => showAddCreditCardModal()}
+            />
+          </div>
+          <div className="costInformation">
+            <h2>Precio total a pagar</h2>
+            <p>
+              Productos:
+              <span>{` ${totalPrice}`}</span>
+            </p>
+            <p>
+              Impuestos:
+              <span>{` ${taxValue}`}</span>
+            </p>
+            <p>
+              Total a pagar:
+              <span>{` ${Number(totalPrice) + Number(taxValue)}`}</span>
+            </p>
+          </div>
+          <Button type="button" className="payButton">
+            Pagar
+          </Button>
         </div>
       </main>
       <Footer />

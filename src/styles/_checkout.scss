@@ -8,9 +8,35 @@
 
 .cartItems {
   flex: 1;
+  max-width: 600px;
 }
 
 .paymentInfo {
   flex: 1;
   min-width: 300px;
+  max-width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.paymentInforCard {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.costInformation {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  p {
+    display: flex;
+    justify-content: space-between;
+    max-width: 200px;
+  }
+}
+
+.payButton {
+  align-self: flex-start;
 }
