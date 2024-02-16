@@ -1,26 +1,36 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Button from "./Button";
+import SpanIcon from "./SpanIcon";
 
 function ShoppingItem({ item, deleteItem }) {
   return (
     <div className="itemCard">
-      <img src={item.img} alt={item.alt} />
+      <img src={`/${item.img}`} alt={item.alt} />
       <div className="content">
         <div className="top">
-          <h3>{item.cardTitle}</h3>
+          <h3>{`${item.quantity}x ${item.cardTitle}`}</h3>
           <Button
             onClick={() => deleteItem(item.id)}
             type="button"
             className=""
             label="eliminar item del carro"
           >
-            Eliminar item
+            <SpanIcon iconName="remove_shopping_cart" />
           </Button>
         </div>
         <div className="text">
           <p>{item.shortDescription}</p>
-          <p>{item.quantity} unidades</p>
+          <div className="cost">
+            <p>
+              Precio individual:
+              <span>{` $${item.price}`}</span>
+            </p>
+            <p>
+              Costo total:
+              <span>{` $${Number(item.price) * Number(item.quantity)}`}</span>
+            </p>
+          </div>
         </div>
       </div>
     </div>

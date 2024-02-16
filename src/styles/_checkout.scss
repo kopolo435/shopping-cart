@@ -1,0 +1,16 @@
+.checkoutContainer {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  flex: 1;
+  flex-wrap: wrap;
+}
+
+.cartItems {
+  flex: 1;
+}
+
+.paymentInfo {
+  flex: 1;
+  min-width: 300px;
+}

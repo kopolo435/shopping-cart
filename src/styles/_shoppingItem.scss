@@ -1,0 +1,30 @@
+.itemCard {
+  display: flex;
+  gap: 10px;
+  background: var(--gold-500);
+  max-width: 600px;
+  min-width: 450px;
+  img {
+    height: auto;
+    width: 130px;
+  }
+  .content {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 10px;
+    flex: 1;
+  }
+
+  .cost {
+    p {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  .top {
+    display: flex;
+    justify-content: space-between;
+  }
+}

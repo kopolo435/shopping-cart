@@ -6,6 +6,7 @@ import ShoppinCart from "../components/ShoppingCart";
 import CardDisplay from "../components/CardDisplay";
 import AddCcForm from "../components/AddCcForm";
 import CartListDisplay from "../components/CartListDisplay";
+import WideNav from "../components/WideNav";
 
 function getCartItems(itemMap) {
   const cartList = JSON.parse(localStorage.getItem("cartList"));
@@ -81,19 +82,22 @@ function Checkout() {
   return (
     <>
       <Header />
+      <WideNav />
       {cartList.size > 0 ? (
-        <main>
+        <main className="checkoutContainer">
           {addCreditCardModal && (
             <AddCcForm onSubmit={saveCreditCardInformation} />
           )}
-          <h1>Articulos en el carro</h1>
-          <CartListDisplay cartList={cartList} deleteItem={deleteItem} />
-          <CardDisplay
-            cardData={JSON.parse(localStorage.getItem("creditCard"))}
-            addCardOnclick={() => showAddCreditCardModal()}
-          />
+          <div className="cartItems">
+            <h1>Articulos en el carro</h1>
+            <CartListDisplay cartList={cartList} deleteItem={deleteItem} />
+          </div>
           <div className="paymentInfo">
             <h2>Tarjeta de credio a usar</h2>
+            <CardDisplay
+              cardData={JSON.parse(localStorage.getItem("creditCard"))}
+              addCardOnclick={() => showAddCreditCardModal()}
+            />
             <h2>Precio total a pagar</h2>
             <p>
               Productos:
