@@ -5,9 +5,14 @@ import ShoppinCart from "./ShoppingCart";
 import getCartItems from "../javascript/getCartItems";
 import data from "../assets/data.json";
 import logo from "../assets/img/logo/logoMinimalista.png";
+import Button from "./Button";
 
 function Header({ initialCartList }) {
   const [cartList, setCartList] = React.useState(null);
+  const [logOut, setLogOut] = React.useState(false);
+  const [isLogin, setIsLogin] = React.useState(
+    JSON.parse(localStorage.getItem("islogin"))
+  );
 
   function deleteItem(id) {
     const tempMap = new Map([...cartList]);
@@ -17,6 +22,21 @@ function Header({ initialCartList }) {
     localStorage.setItem("cartList", JSON.stringify(tempCartListObj));
     setCartList(tempMap);
   }
+
+  function handleLogOut() {
+    localStorage.setItem("login", "false");
+    localStorage.setItem("loginUser", "");
+    setLogOut(true);
+    setIsLogin(false);
+  }
+
+  React.useEffect(() => {
+    if (logOut) {
+      // Check if logOut is true
+      setIsLogin(false); // Update isLogin to false
+      setLogOut(false); // Reset logOut to false
+    }
+  }, [logOut]); // useEffect depends on logOut state
 
   React.useEffect(() => {
     if (!initialCartList) {
@@ -29,7 +49,6 @@ function Header({ initialCartList }) {
       setCartList(getCartItems(initialCartList));
     }
   }, [initialCartList]);
-
   return (
     <header>
       <HamburguerMenu />
@@ -39,7 +58,29 @@ function Header({ initialCartList }) {
           <span>Arts Delish</span>
         </Link>
       </div>
-      {cartList && <ShoppinCart itemList={cartList} deleteItem={deleteItem} />}
+      <div className="headerActions">
+        {!isLogin ? (
+          <>
+            <Link to="/authentication/login" className="headerAuth login">
+              Iniciar sesion
+            </Link>
+            <Link to="/authentication/singup" className="headerAuth login">
+              Registrarse
+            </Link>
+          </>
+        ) : (
+          <Button
+            type="button"
+            className="logOutHeader"
+            onClick={() => handleLogOut()}
+          >
+            Cerrar sesion
+          </Button>
+        )}
+        {cartList && (
+          <ShoppinCart itemList={cartList} deleteItem={deleteItem} />
+        )}
+      </div>
     </header>
   );
 }

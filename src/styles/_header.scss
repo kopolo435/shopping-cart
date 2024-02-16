@@ -23,6 +23,20 @@ header {
   }
 }
 
+.headerActions {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.headerAuth {
+  display: none;
+}
+
+.logOutHeader {
+  display: none;
+}
+
 @media (min-width: 500px) {
   header {
     margin-bottom: 0px;
@@ -30,5 +44,13 @@ header {
     -moz-box-shadow: none;
     box-shadow: none;
     position: static;
+  }
+
+  .headerAuth {
+    display: block;
+  }
+
+  .logOutHeader {
+    display: block;
   }
 }
