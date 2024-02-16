@@ -24,7 +24,7 @@ function HamburguerMenu() {
     clearTimeout(timeoutId);
     const newTimeoutId = setTimeout(() => {
       setStatus("show");
-    }, 500);
+    }, 100);
     setTimeoutId(newTimeoutId);
   }
 
@@ -49,7 +49,7 @@ function HamburguerMenu() {
       </Button>
       <div
         data-testid="menuContainer"
-        className={`hamburguerContaiener ${status}`}
+        className={`hamburguerContainer ${status}`}
       >
         <nav className="hamburguerNav">
           <ul>

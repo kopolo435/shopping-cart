@@ -1,4 +1,33 @@
-.hamburguerContaiener.hide {
+.hamburguerContainer {
+  position: absolute;
+  top: 77px;
+  background: var(--skyblue-300);
+  margin-left: -20px;
+  padding: 20px;
+  height: 100vh;
+  width: 100vw;
+  transition: transform 0.5s ease-in-out;
+  transform-origin: left;
+  transform: scaleX(100%);
+  -webkit-box-shadow: inset 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: inset 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  box-shadow: inset 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+.hamburguerContainer.showing {
+  display: block;
+  transform: scaleX(0%);
+}
+
+.hamburguerContainer.show {
+  display: block;
+  transform: scaleX(100%);
+}
+
+.hamburguerContainer.hiding {
+  transform: scaleX(0%);
+}
+
+.hamburguerContainer.hide {
   display: none;
 }
 
@@ -18,5 +47,8 @@
 @media (min-width: 500px) {
   .toogleHamburguerMenu {
     display: none;
+  }
+  .hamburguerContainer {
+    display: none !important;
   }
 }
