@@ -21,7 +21,7 @@ function HomePage() {
     <>
       <Header />
       <WideNav />
-      <main>
+      <main className="homePageMain">
         <div className="introduction">
           <div className="imgContainer">
             <img src={logo} alt="" />
