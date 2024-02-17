@@ -7,6 +7,9 @@ import CardDisplay from "../components/CardDisplay";
 import AddCcForm from "../components/AddCcForm";
 import CartListDisplay from "../components/CartListDisplay";
 import WideNav from "../components/WideNav";
+import getCartListTotal from "../javascript/getCartListTota";
+import saveCreditCard from "../javascript/saveCreditCard";
+import deleteItemLocalStorage from "../javascript/deleteItemLocalStorage";
 
 function getCartItems(itemMap) {
   const cartList = JSON.parse(localStorage.getItem("cartList"));
@@ -28,6 +31,7 @@ function Checkout() {
   const [creditCardAdded, setCreditCardAdded] = React.useState(false);
   let totalPrice = 0;
   let taxValue = 0;
+
   React.useEffect(() => {
     const tempMap = new Map();
     data.itemList.forEach((item) => {
@@ -42,50 +46,32 @@ function Checkout() {
   }
 
   function deleteItem(id) {
-    const tempMap = new Map([...cartList]);
-    const tempCartListObj = JSON.parse(localStorage.getItem("cartList"));
-    delete tempCartListObj[id];
-    tempMap.delete(id);
-    localStorage.setItem("cartList", JSON.stringify(tempCartListObj));
-    setCartList(tempMap);
+    // Elimina item del map pasado y del localStorage
+    const updateMap = deleteItemLocalStorage(id, new Map([...cartList]));
+    setCartList(updateMap);
   }
 
   function saveCreditCardInformation(values) {
-    const creditCardInfo = {
-      owner: values.get("owner"),
-      number: values.get("ccNumber"),
-      pin: values.get("ccPin"),
-      address: values.get("ccAdress"),
-      monthExpiration: values.get("monthExpiration"),
-      yearExpiration: values.get("yearExpiration"),
-    };
-    localStorage.setItem("creditCard", JSON.stringify(creditCardInfo));
-    console.log(localStorage.getItem("creditCard"));
+    // Guarda datos de la tarjeta en localStorage
+    saveCreditCard(values);
+
     setCreditCardAdded(true);
     setTimeout(() => {
       setCreditCardAdded(false);
     }, 100);
   }
-  const hola = { hola: 2 };
 
+  // Calcular precio total de productos
   if (cartList.size > 0) {
-    const itemsPriceArray = Array.from(cartList.values()).map((item) => ({
-      price: item.price,
-      quantity: item.quantity,
-    }));
-    totalPrice = itemsPriceArray.reduce((accumulator, currentItem) => {
-      const value =
-        Number(currentItem.price) * Number(currentItem.quantity) + accumulator;
-      return value;
-    }, 0);
-    taxValue = Number(totalPrice) * 0.07;
-    taxValue = Math.round((taxValue + Number.EPSILON) * 100) / 100;
-    totalPrice = Math.round((totalPrice + Number.EPSILON) * 100) / 100;
+    [totalPrice, taxValue] = getCartListTotal(cartList);
   }
 
   return (
     <>
-      <Header initialCartList={cartList} />
+      <Header
+        initialCartList={cartList}
+        initialIsLogin={JSON.parse(localStorage.getItem("login"))}
+      />
       <WideNav />
       <div className={`backdrop ${addCreditCardModal ? "show" : "hide"}`} />
       <main className="checkoutContainer">
