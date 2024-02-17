@@ -20,4 +20,21 @@
 
 .useAnotherCard {
   align-self: flex-start;
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  padding: 5px 10px;
+  background: transparent;
+  border: 2px solid var(--gold-500);
+  transition: transform 0.5s ease-in-out;
+}
+
+.useAnotherCard:focus-visible,
+.useAnotherCard:hover {
+  background: rgb(204, 200, 200);
+  transform: scale(105%);
+}
+
+.useAnotherCard:active {
+  background: transparent;
 }

@@ -13,7 +13,7 @@ function ShoppingItem({ item, deleteItem }) {
           <Button
             onClick={() => deleteItem(item.id)}
             type="button"
-            className=""
+            className="removeItemButton"
             label="eliminar item del carro"
           >
             <SpanIcon iconName="remove_shopping_cart" />

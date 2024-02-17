@@ -130,16 +130,16 @@ function Checkout() {
           <div className="costInformation">
             <h2>Precio total a pagar</h2>
             <p>
-              Productos:
-              <span>{` ${totalPrice}`}</span>
+              Total en productos:
+              <span>{` $${totalPrice}`}</span>
             </p>
             <p>
               Impuestos:
-              <span>{` ${taxValue}`}</span>
+              <span>{` $${taxValue}`}</span>
             </p>
             <p>
               Total a pagar:
-              <span>{` ${Number(totalPrice) + Number(taxValue)}`}</span>
+              <span>{` $${Number(totalPrice) + Number(taxValue)}`}</span>
             </p>
           </div>
           <Button type="button" className="payButton">
