@@ -53,7 +53,7 @@ function LoginForm({ onSubmit }) {
         validation={passwordTest}
         submitting={submitting}
       />
-      <Button type="submit" className="" onClick={() => {}}>
+      <Button type="submit" className="logInButton" onClick={() => {}}>
         Iniciar sesion
       </Button>
     </form>

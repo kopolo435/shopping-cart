@@ -77,7 +77,7 @@ function Authentication() {
             <h1>Registrarse</h1>
             <RegisterForm onSubmit={handleRegister} />
             <p>
-              Ya te registrarste?{" "}
+              Ya te registraste?{" "}
               <Link to="/authentication/login">Inicia sesion aqui</Link>
             </p>
           </div>

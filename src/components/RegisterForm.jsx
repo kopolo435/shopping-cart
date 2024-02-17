@@ -77,7 +77,7 @@ function RegisterUserForm({ onSubmit }) {
         passwordValue={formValues.get("password")}
         submitting={submitting}
       />
-      <Button type="submit" className="" onClick={() => {}}>
+      <Button type="submit" className="signUpButton" onClick={() => {}}>
         Registrarse
       </Button>
     </form>

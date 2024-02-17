@@ -1,6 +1,7 @@
 .authMain {
   flex: 1;
   padding: 0px 20px;
+  padding-bottom: 50px;
 }
 
 .formContainer {
@@ -23,6 +24,54 @@
     flex-direction: column;
     gap: 5px;
   }
+
+  input {
+    padding: 5px 5px;
+    background-color: var(--skyblue-700);
+    -webkit-box-shadow: inset 3px 3px 5px 0px rgb(0 0 0 / 50%);
+    -moz-box-shadow: inset 3px 3px 5px 0px rgba(0, 0, 0, 0.25);
+    box-shadow: inset 2px 2px 5px 0px rgba(0, 0, 0, 0.7);
+    border: none;
+    color: var(--gold-300);
+  }
+}
+
+.logInButton {
+  border: 3px solid var(--pink-500);
+  padding: 3px 5px;
+  background: var(--gold-500);
+  transition: transform 0.3s ease-in-out;
+  text-decoration: none;
+  color: var(--pink-900);
+}
+
+.logInButton:hover,
+.logInButton:focus-visible {
+  transform: scale(105%);
+  background-color: rgba(128, 128, 128, 0.425);
+}
+
+.logInButton:active {
+  background: var(--gold-500);
+}
+
+.signUpButton {
+  border: 3px solid var(--pink-500);
+  padding: 3px 5px;
+  background: var(--gold-500);
+  transition: transform 0.3s ease-in-out;
+  text-decoration: none;
+  color: var(--pink-900);
+}
+
+.signUpButton:hover,
+.signUpButton:focus-visible {
+  transform: scale(105%);
+  background-color: rgba(128, 128, 128, 0.425);
+}
+
+.signUpButton:active {
+  background: var(--gold-500);
 }
 
 .textInputContainer {
