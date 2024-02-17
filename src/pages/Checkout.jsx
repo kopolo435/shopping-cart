@@ -143,6 +143,7 @@ function Checkout() {
             </p>
           </div>
           <Button type="button" className="payButton">
+            <SpanIcon iconName="payments" />
             Pagar
           </Button>
         </div>
