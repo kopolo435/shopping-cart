@@ -10,6 +10,7 @@ import WideNav from "../components/WideNav";
 import getCartListTotal from "../javascript/getCartListTota";
 import saveCreditCard from "../javascript/saveCreditCard";
 import deleteItemLocalStorage from "../javascript/deleteItemLocalStorage";
+import formatMoneyAmount from "../javascript/formatMoney";
 import { wrapTabOrder, setModalFocus } from "../javascript/modalAccesibility";
 import SpanIcon from "../components/SpanIcon";
 
@@ -131,15 +132,19 @@ function Checkout() {
             <h2>Precio total a pagar</h2>
             <p>
               Total en productos:
-              <span>{` $${totalPrice}`}</span>
+              <span>{`$${formatMoneyAmount(`${totalPrice}`)}`}</span>
             </p>
             <p>
               Impuestos:
-              <span>{` $${taxValue}`}</span>
+              <span>{` $${formatMoneyAmount(`${taxValue}`)}`}</span>
             </p>
             <p>
               Total a pagar:
-              <span>{` $${Number(totalPrice) + Number(taxValue)}`}</span>
+              <span>
+                {` $${formatMoneyAmount(
+                  `${Number(totalPrice) + Number(taxValue)}`
+                )}`}
+              </span>
             </p>
           </div>
           <Button type="button" className="payButton">

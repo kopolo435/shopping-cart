@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import Button from "./Button";
 import SpanIcon from "./SpanIcon";
+import formatMoneyAmount from "../javascript/formatMoney";
 
 function ShoppingItem({ item, deleteItem }) {
   return (
@@ -24,11 +25,15 @@ function ShoppingItem({ item, deleteItem }) {
           <div className="cost">
             <p>
               Precio individual:
-              <span>{` $${item.price}`}</span>
+              <span>{` $${formatMoneyAmount(`${item.price}`)}`}</span>
             </p>
             <p>
               Costo total:
-              <span>{` $${Number(item.price) * Number(item.quantity)}`}</span>
+              <span>
+                {` $${formatMoneyAmount(
+                  `${Number(item.price) * Number(item.quantity)}`
+                )}`}
+              </span>
             </p>
           </div>
         </div>
