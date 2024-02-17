@@ -44,6 +44,32 @@
   background-color: rgba(128, 128, 128, 0.425);
 }
 
+.hamburguerNav {
+  ul {
+    padding: 0px;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  a {
+    text-decoration: none;
+  }
+}
+
+.hamburguerActions {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 15px;
+
+  a {
+    text-decoration: none;
+  }
+}
+
 @media (min-width: 500px) {
   .toogleHamburguerMenu {
     display: none;
