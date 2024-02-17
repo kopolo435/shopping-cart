@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import SpanIcon from "./SpanIcon";
 import Button from "./Button";
 import CartListDisplay from "./CartListDisplay";
+import logo from "../assets/img/logo/logoMinimalista.png";
 import { setModalFocus, wrapTabOrder } from "../javascript/modalAccesibility";
 
 function ShoppinCart({ itemList, deleteItem }) {
@@ -26,7 +27,7 @@ function ShoppinCart({ itemList, deleteItem }) {
     setTimeout(() => {
       setStatus("show");
       const shoppingCartModal = document.querySelector(
-        ".shoppingCartContainer",
+        ".shoppingCartContainer"
       );
       setModalFocus(shoppingCartModal);
       shoppingCartModal.addEventListener("keydown", (event) => {
@@ -52,15 +53,22 @@ function ShoppinCart({ itemList, deleteItem }) {
         className={`shoppingCartContainer ${status}`}
         data-testid="shoppingCartContainer"
       >
-        <Button
-          type="button"
-          onClick={closeMenu}
-          label="hide shopping cart"
-          className="hideShoppingCart"
-        >
-          <SpanIcon iconName="close" />
-          {" "}
-        </Button>
+        <div className="shoppingCartHeader">
+          <Button
+            type="button"
+            onClick={closeMenu}
+            label="hide shopping cart"
+            className="hideShoppingCart"
+          >
+            <SpanIcon iconName="close" />{" "}
+          </Button>
+          <div className="logoContainer">
+            <Link to="/">
+              <img src={logo} alt="" />
+              <span>Arts Delish</span>
+            </Link>
+          </div>
+        </div>
         <h2>Tu carro de compras</h2>
         {cartList.size < 1 ? (
           <p>Todavia no se ha agregado nada</p>
@@ -68,9 +76,7 @@ function ShoppinCart({ itemList, deleteItem }) {
           <>
             <p>
               Posee
-              {` ${cartList.size}`}
-              {" "}
-              productos en su carro
+              {` ${cartList.size}`} productos en su carro
             </p>
             <div className="listContainer">
               <div className="cartItemsListContainer">
@@ -79,7 +85,9 @@ function ShoppinCart({ itemList, deleteItem }) {
             </div>
           </>
         )}
-        <Link to="/cart/checkout">Pagar articulos</Link>
+        <Link to="/cart/checkout" className="goToCheckoutButton">
+          Ir a caja
+        </Link>
       </div>
     </>
   );

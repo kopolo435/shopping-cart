@@ -43,6 +43,11 @@
   display: none;
 }
 
+.shoppingCartHeader {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
 .listContainer {
   background: var(--skyblue-700);
   padding: 10px;
@@ -77,6 +82,25 @@
 .backdrop.showing {
   opacity: 80%;
   pointer-events: auto;
+}
+
+.goToCheckoutButton {
+  padding: 5px 15px;
+  background: var(--gold-700);
+  color: var(--pink-900);
+  border: 3px solid var(--pink-300);
+  transition: transform 0.5s ease-in-out;
+  text-decoration: none;
+}
+
+.goToCheckoutButton:hover,
+.goToCheckoutButton:focus-visible {
+  transform: scale(105%);
+  border: 3px solid black;
+}
+
+.goToCheckoutButton:active {
+  border: 3px solid var(--pink-300);
 }
 
 @media (min-width: 400px) {
