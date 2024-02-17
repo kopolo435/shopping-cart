@@ -93,6 +93,7 @@ function Checkout() {
       <main className="checkoutContainer">
         <div className={`addCreditCardModal ${addCcModalStatus}`}>
           <h3>Agregar nueva tarjeta de credito</h3>
+          <p>Los campos marcados con (*) son requeridos</p>
           <AddCcForm onSubmit={saveCreditCardInformation} />
           <Button
             type="button"

@@ -80,7 +80,7 @@ function TextInput({
           onChange={(e) => handleInputChange(e.target.value)}
         />
       </label>
-      <p id={`${name}-error`} role="alert">
+      <p id={`${name}-error`} role="alert" className="errorInputText">
         {error}
       </p>
     </div>
