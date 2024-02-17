@@ -43,7 +43,10 @@ function ItemPage({ saveToCart }) {
   const itemData = itemMap.get(id) ? itemMap.get(id) : null;
   return (
     <>
-      <Header initialCartList={cartList} />
+      <Header
+        initialCartList={cartList}
+        initialIsLogin={JSON.parse(localStorage.getItem("login"))}
+      />
       <WideNav />
       {itemData ? (
         <main className="itemInfoContainer">

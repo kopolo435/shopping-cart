@@ -13,7 +13,16 @@
     flex: 1;
     max-width: 500px;
     padding: 10px 20px;
+    a {
+      text-decoration: none;
+      color: #0b1b1b;
+    }
   }
+}
+
+.chosenLinkNav {
+  padding-bottom: 3px;
+  border-bottom: 3px solid var(--gold-500);
 }
 
 @media (min-width: 500px) {

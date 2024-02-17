@@ -1,14 +1,20 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useParams, useLocation } from "react-router-dom";
 import Button from "./Button";
 import SpanIcon from "./SpanIcon";
 import data from "../assets/data.json";
+
+function isChosenPage(linkName, currentPage) {
+  return linkName === currentPage ? "chosenLinkNav" : "";
+}
 
 function HamburguerMenu({ initialIsLogin }) {
   const [status, setStatus] = React.useState("hide");
   const [timeoutId, setTimeoutId] = React.useState(null);
   const [logOut, setLogOut] = React.useState(false);
   const [isLogin, setIsLogin] = React.useState(initialIsLogin);
+  const { name } = useParams();
+  const location = useLocation();
 
   function handleLogOut() {
     localStorage.setItem("login", "false");
@@ -70,21 +76,49 @@ function HamburguerMenu({ initialIsLogin }) {
         <nav className="hamburguerNav">
           <ul>
             <li>
-              <Link to="/">Home</Link>
+              <Link
+                to="/"
+                className={isChosenPage("/", location.pathname)}
+                onClick={() => closeMenu()}
+              >
+                Home
+              </Link>
             </li>
             <li>
-              <Link to={data.categoryInfo.dulces.pageLink}>Dulces</Link>
+              <Link
+                to={data.categoryInfo.dulces.pageLink}
+                className={isChosenPage("dulces", name)}
+                onClick={() => closeMenu()}
+              >
+                Dulces
+              </Link>
             </li>
             <li>
-              <Link to={data.categoryInfo.cupcakes.pageLink}>Cupcakes</Link>
+              <Link
+                to={data.categoryInfo.cupcakes.pageLink}
+                className={isChosenPage("cupcakes", name)}
+                onClick={() => closeMenu()}
+              >
+                Cupcakes
+              </Link>
             </li>
             <li>
-              <Link to={data.categoryInfo.postreshelados.pageLink}>
+              <Link
+                to={data.categoryInfo.postreshelados.pageLink}
+                className={isChosenPage("postreshelados", name)}
+                onClick={() => closeMenu()}
+              >
                 Postres helados
               </Link>
             </li>
             <li>
-              <Link to={data.categoryInfo.kpops.pageLink}>K-pops</Link>
+              <Link
+                to={data.categoryInfo.kpops.pageLink}
+                className={isChosenPage("kpops", name)}
+                onClick={() => closeMenu()}
+              >
+                K-pops
+              </Link>
             </li>
           </ul>
         </nav>

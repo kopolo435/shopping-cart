@@ -61,7 +61,7 @@ function Authentication() {
   return (
     <>
       <Header initialIsLogin={didLogIng} />
-      <WideNav initialIsLogin={didLogIng} />
+      <WideNav />
       <main className="authMain">
         {type === "login" ? (
           <div className="formContainer">

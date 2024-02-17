@@ -21,7 +21,7 @@ function CategoryPage() {
 
   return (
     <>
-      <Header />
+      <Header initialIsLogin={JSON.parse(localStorage.getItem("login"))} />
       <WideNav />
       {info ? (
         <main>
