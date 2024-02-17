@@ -39,7 +39,7 @@ function AddCcForm({ onSubmit }) {
   }, [submitting, setFormErrors, onSubmit, FormValues]);
 
   return (
-    <form onSubmit={handleSubmit} noValidate>
+    <form onSubmit={handleSubmit} className="addCreditCardForm" noValidate>
       <TextInput
         type="text"
         label="Numero de tarjeta"
@@ -77,6 +77,7 @@ function AddCcForm({ onSubmit }) {
         submitting={submitting}
       />
       <fieldset>
+        <legend>Fecha de expiración</legend>
         <TextInput
           type="number"
           label="Mes"
@@ -96,7 +97,7 @@ function AddCcForm({ onSubmit }) {
           submitting={submitting}
         />
       </fieldset>
-      <Button type="submit" className="" onClick={() => {}}>
+      <Button type="submit" className="saveNewCreditCard" onClick={() => {}}>
         Guardar datos
       </Button>
     </form>

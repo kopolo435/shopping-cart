@@ -87,9 +87,20 @@ function Checkout() {
     <>
       <Header initialCartList={cartList} />
       <WideNav />
+      <div className={`backdrop ${addCreditCardModal ? "show" : "hide"}`} />
       <main className="checkoutContainer">
         {addCreditCardModal && (
-          <AddCcForm onSubmit={saveCreditCardInformation} />
+          <div className="addCreditCardModal">
+            <h3>Agregar nueva tarjeta de credito</h3>
+            <AddCcForm onSubmit={saveCreditCardInformation} />
+            <Button
+              type="button"
+              className=""
+              onClick={() => setAddCreditCardMoldal(false)}
+            >
+              Cancelar
+            </Button>
+          </div>
         )}
         <div className="cartItems">
           <h1>Articulos en el carro</h1>
