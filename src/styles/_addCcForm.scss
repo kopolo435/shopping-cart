@@ -8,6 +8,25 @@
   flex-direction: column;
   align-items: center;
   gap: 10px;
+  transition: transform 0.5s linear;
+  transform: translateY(100%);
+}
+.addCreditCardModal.showing {
+  display: flex;
+  transform: translateY(-100%);
+}
+
+.addCreditCardModal.show {
+  display: flex;
+  transform: translateY(0%);
+}
+
+.addCreditCardModal.hiding {
+  transform: translateY(-100%);
+}
+
+.addCreditCardModal.hide {
+  display: none;
 }
 
 .addCreditCardForm {

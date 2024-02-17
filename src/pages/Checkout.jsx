@@ -10,6 +10,7 @@ import WideNav from "../components/WideNav";
 import getCartListTotal from "../javascript/getCartListTota";
 import saveCreditCard from "../javascript/saveCreditCard";
 import deleteItemLocalStorage from "../javascript/deleteItemLocalStorage";
+import { wrapTabOrder, setModalFocus } from "../javascript/modalAccesibility";
 
 function getCartItems(itemMap) {
   const cartList = JSON.parse(localStorage.getItem("cartList"));
@@ -27,7 +28,7 @@ function getCartItems(itemMap) {
 function Checkout() {
   const [itemMap, setItemMap] = React.useState(new Map());
   const [cartList, setCartList] = React.useState(new Map());
-  const [addCreditCardModal, setAddCreditCardMoldal] = React.useState(false);
+  const [addCcModalStatus, setAddCcModalStatus] = React.useState("hide");
   const [creditCardAdded, setCreditCardAdded] = React.useState(false);
   let totalPrice = 0;
   let taxValue = 0;
@@ -41,8 +42,23 @@ function Checkout() {
     setCartList(getCartItems(tempMap));
   }, []);
 
-  function showAddCreditCardModal() {
-    setAddCreditCardMoldal(true);
+  function closeCreditCardModal() {
+    setAddCcModalStatus("hiding");
+    setTimeout(() => {
+      setAddCcModalStatus("hide");
+    }, 500);
+  }
+
+  function openCreditCardModal() {
+    setAddCcModalStatus("showing");
+    setTimeout(() => {
+      setAddCcModalStatus("show");
+      const shoppingCartModal = document.querySelector(".addCreditCardModal");
+      setModalFocus(shoppingCartModal);
+      shoppingCartModal.addEventListener("keydown", (event) => {
+        wrapTabOrder(event, shoppingCartModal);
+      });
+    }, 100);
   }
 
   function deleteItem(id) {
@@ -73,21 +89,19 @@ function Checkout() {
         initialIsLogin={JSON.parse(localStorage.getItem("login"))}
       />
       <WideNav />
-      <div className={`backdrop ${addCreditCardModal ? "show" : "hide"}`} />
+      <div className={`backdrop ${addCcModalStatus}`} />
       <main className="checkoutContainer">
-        {addCreditCardModal && (
-          <div className="addCreditCardModal">
-            <h3>Agregar nueva tarjeta de credito</h3>
-            <AddCcForm onSubmit={saveCreditCardInformation} />
-            <Button
-              type="button"
-              className=""
-              onClick={() => setAddCreditCardMoldal(false)}
-            >
-              Cancelar
-            </Button>
-          </div>
-        )}
+        <div className={`addCreditCardModal ${addCcModalStatus}`}>
+          <h3>Agregar nueva tarjeta de credito</h3>
+          <AddCcForm onSubmit={saveCreditCardInformation} />
+          <Button
+            type="button"
+            className=""
+            onClick={() => closeCreditCardModal()}
+          >
+            Cancelar
+          </Button>
+        </div>
         <div className="cartItems">
           <h1>Articulos en el carro</h1>
           {cartList.size > 0 ? (
@@ -103,7 +117,7 @@ function Checkout() {
             <h2>Tarjeta de credio a usar</h2>
             <CardDisplay
               cardData={JSON.parse(localStorage.getItem("creditCard"))}
-              addCardOnclick={() => showAddCreditCardModal()}
+              addCardOnclick={() => openCreditCardModal()}
             />
           </div>
           <div className="costInformation">
