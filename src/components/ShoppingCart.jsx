@@ -26,7 +26,7 @@ function ShoppinCart({ itemList, deleteItem }) {
     setTimeout(() => {
       setStatus("show");
       const shoppingCartModal = document.querySelector(
-        ".shoppingCartContainer"
+        ".shoppingCartContainer",
       );
       setModalFocus(shoppingCartModal);
       shoppingCartModal.addEventListener("keydown", (event) => {
@@ -56,9 +56,10 @@ function ShoppinCart({ itemList, deleteItem }) {
           type="button"
           onClick={closeMenu}
           label="hide shopping cart"
-          className=""
+          className="hideShoppingCart"
         >
-          <SpanIcon iconName="close" />{" "}
+          <SpanIcon iconName="close" />
+          {" "}
         </Button>
         <h2>Tu carro de compras</h2>
         {cartList.size < 1 ? (
@@ -67,7 +68,9 @@ function ShoppinCart({ itemList, deleteItem }) {
           <>
             <p>
               Posee
-              {` ${cartList.size}`} productos en su carro
+              {` ${cartList.size}`}
+              {" "}
+              productos en su carro
             </p>
             <div className="listContainer">
               <div className="cartItemsListContainer">
