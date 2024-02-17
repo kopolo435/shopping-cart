@@ -65,7 +65,7 @@
   }
 
   input {
-    padding: 2px 5px;
+    padding: 5px 5px;
     background-color: var(--skyblue-700);
     -webkit-box-shadow: inset 3px 3px 5px 0px rgb(0 0 0 / 50%);
     -moz-box-shadow: inset 3px 3px 5px 0px rgba(0, 0, 0, 0.25);
@@ -94,8 +94,22 @@
 .saveNewCreditCard {
   grid-column: 1/3;
   justify-self: center;
+  align-self: center;
+  margin-top: 10px;
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  border: 2px solid #8bc34a;
+  background: #dcf6c1;
+  padding: 5px 10px;
+  color: var(--skyblue-900);
+  transition: transform 0.5s ease-in-out;
 }
 
+.saveNewCreditCard:hover,
+.saveNewCreditCard:focus-visible {
+  transform: scale(105%);
+}
 @media (min-width: 600px) {
   .addCreditCardForm {
     display: grid;

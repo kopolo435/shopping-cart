@@ -10,6 +10,7 @@ import {
   nameInputTest,
   checkCreditCardPin,
 } from "../javascript/inputValidation";
+import SpanIcon from "./SpanIcon";
 
 function AddCcForm({ onSubmit }) {
   const [formErrors, setFormErrors] = React.useState(new Map());
@@ -98,6 +99,7 @@ function AddCcForm({ onSubmit }) {
         />
       </fieldset>
       <Button type="submit" className="saveNewCreditCard" onClick={() => {}}>
+        <SpanIcon iconName="add_card" />
         Guardar datos
       </Button>
     </form>

@@ -117,7 +117,7 @@ function Checkout() {
         </div>
         <div className="paymentInfo">
           <div className="paymentInforCard">
-            <h2>Tarjeta de credio a usar</h2>
+            <h2>Tarjeta de credito a usar</h2>
             <CardDisplay
               cardData={JSON.parse(localStorage.getItem("creditCard"))}
               addCardOnclick={() => openCreditCardModal()}
