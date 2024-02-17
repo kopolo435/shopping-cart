@@ -11,6 +11,7 @@ import getCartListTotal from "../javascript/getCartListTota";
 import saveCreditCard from "../javascript/saveCreditCard";
 import deleteItemLocalStorage from "../javascript/deleteItemLocalStorage";
 import { wrapTabOrder, setModalFocus } from "../javascript/modalAccesibility";
+import SpanIcon from "../components/SpanIcon";
 
 function getCartItems(itemMap) {
   const cartList = JSON.parse(localStorage.getItem("cartList"));
@@ -92,16 +93,17 @@ function Checkout() {
       <div className={`backdrop ${addCcModalStatus}`} />
       <main className="checkoutContainer">
         <div className={`addCreditCardModal ${addCcModalStatus}`}>
+          <Button
+            type="button"
+            className="closeAddCreditCard"
+            label="Cerrar pestaña de agregar tarjeta"
+            onClick={() => closeCreditCardModal()}
+          >
+            <SpanIcon iconName="close" />
+          </Button>
           <h3>Agregar nueva tarjeta de credito</h3>
           <p>Los campos marcados con (*) son requeridos</p>
           <AddCcForm onSubmit={saveCreditCardInformation} />
-          <Button
-            type="button"
-            className=""
-            onClick={() => closeCreditCardModal()}
-          >
-            Cancelar
-          </Button>
         </div>
         <div className="cartItems">
           <h1>Articulos en el carro</h1>
