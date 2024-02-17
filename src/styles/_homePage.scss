@@ -5,7 +5,7 @@
 .introduction {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 25px;
   margin-bottom: 30px;
 }
 
@@ -15,6 +15,9 @@
   img {
     height: auto;
     width: 200px;
+    -webkit-box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    -moz-box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   }
 }
 
@@ -39,14 +42,25 @@ hr {
   flex-wrap: wrap;
   padding: 30px 20px;
   gap: 30px;
-  margin-top: 20px;
+}
+
+.categoryListTitle {
+  margin-top: 10px;
 }
 
 @media (min-width: 700px) {
   .introduction {
     flex-direction: row;
     justify-content: center;
-    gap: 10px;
+    gap: 40px;
+
+    .text {
+      padding: 10px;
+      background-color: var(--skyblue-50);
+      -webkit-box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+      -moz-box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+      box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    }
   }
 }
 

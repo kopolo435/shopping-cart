@@ -24,7 +24,7 @@ function CategoryPage() {
       <Header initialIsLogin={JSON.parse(localStorage.getItem("login"))} />
       <WideNav />
       {info ? (
-        <main>
+        <main className="categoryPageMain">
           <div className="categoryInfo">
             <div className="categoryImg">
               <img src={info.img} alt="" />
@@ -35,6 +35,9 @@ function CategoryPage() {
             </div>
           </div>
           <hr />
+          <h2 className="categoryListTitle">
+            Nuestro catalogo de estos productos
+          </h2>
           <div className="itemsContainer">
             {info.items.map((itemId) => (
               <CategoryCard key={itemId} data={itemMap.get(itemId)} />

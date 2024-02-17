@@ -74,7 +74,11 @@ function ItemPage({ saveToCart }) {
                   max={999}
                 />
               </label>
-              <Button type="button" className="" onClick={() => handleClick()}>
+              <Button
+                type="button"
+                className="addToCartButton"
+                onClick={() => handleClick()}
+              >
                 <SpanIcon iconName="add_shopping_cart" />
                 Añadir al carro
               </Button>

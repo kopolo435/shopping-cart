@@ -4,6 +4,15 @@
   text-decoration: none;
   color: var(--pink-900);
   width: 200px;
+  -webkit-box-shadow: 4px 6px 4px 1px rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: 4px 6px 4px 1px rgba(0, 0, 0, 0.25);
+  box-shadow: 4px 6px 4px 1px rgba(0, 0, 0, 0.25);
+  transition: transform 0.3s ease-in-out;
+}
+
+.categoryCard:hover,
+.categoryCard:focus-visible {
+  transform: scale(110%);
 }
 
 .cardImg {
@@ -16,6 +25,5 @@
 
 .cardContent {
   padding: 10px 15px;
-  background-color: aquamarine;
   flex: 1;
 }

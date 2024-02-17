@@ -38,6 +38,9 @@ function HomePage() {
           </div>
         </div>
         <hr />
+        <h2 className="categoryListTitle">
+          Explora nuestras categorias de productos
+        </h2>
         <div className="productsCategories">
           {categories ? (
             data.categories.map((categoryName) => (
