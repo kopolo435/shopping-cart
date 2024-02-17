@@ -4,9 +4,25 @@ import Button from "./Button";
 import SpanIcon from "./SpanIcon";
 import data from "../assets/data.json";
 
-function HamburguerMenu() {
+function HamburguerMenu({ initialIsLogin }) {
   const [status, setStatus] = React.useState("hide");
   const [timeoutId, setTimeoutId] = React.useState(null);
+  const [logOut, setLogOut] = React.useState(false);
+  const [isLogin, setIsLogin] = React.useState(initialIsLogin);
+
+  function handleLogOut() {
+    localStorage.setItem("login", "false");
+    localStorage.setItem("loginUser", "");
+    setLogOut(true);
+    setIsLogin(false);
+  }
+
+  React.useEffect(() => {
+    if (logOut) {
+      // Check if logOut is true
+      setLogOut(false); // Reset logOut to false
+    }
+  }, [logOut]); // useEffect depends on logOut state
 
   const buttonData = {};
 
@@ -72,6 +88,29 @@ function HamburguerMenu() {
             </li>
           </ul>
         </nav>
+        <div className="hamburguerActions">
+          {!isLogin ? (
+            <>
+              <Link to="/authentication/login" className="hamburguerAuth login">
+                Iniciar sesion
+              </Link>
+              <Link
+                to="/authentication/singup"
+                className="hamburguerAuth login"
+              >
+                Registrarse
+              </Link>
+            </>
+          ) : (
+            <Button
+              type="button"
+              className="logOutHamburguer"
+              onClick={() => handleLogOut()}
+            >
+              Cerrar sesion
+            </Button>
+          )}
+        </div>
       </div>
     </>
   );

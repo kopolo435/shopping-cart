@@ -19,7 +19,7 @@ function HomePage() {
 
   return (
     <>
-      <Header />
+      <Header initialIsLogin={JSON.parse(localStorage.getItem("login"))} />
       <WideNav />
       <main className="homePageMain">
         <div className="introduction">

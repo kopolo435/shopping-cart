@@ -9,6 +9,9 @@ import WideNav from "../components/WideNav";
 function Authentication() {
   const { type } = useParams();
   const [notification, setNotification] = React.useState("");
+  const [didLogIng, setDidLogin] = React.useState(
+    JSON.parse(localStorage.getItem("login"))
+  );
   const navigate = useNavigate();
 
   function handleRegister(values) {
@@ -25,6 +28,7 @@ function Authentication() {
 
     localStorage.setItem("users", JSON.stringify(user));
     setNotification("Registro exitoso, redireccionando a Inicio de sesion");
+    setDidLogin(true);
     setTimeout(() => {
       navigate("/authentication/login");
       setNotification("");
@@ -56,8 +60,8 @@ function Authentication() {
 
   return (
     <>
-      <Header />
-      <WideNav />
+      <Header initialIsLogin={didLogIng} />
+      <WideNav initialIsLogin={didLogIng} />
       <main className="authMain">
         {type === "login" ? (
           <div className="formContainer">

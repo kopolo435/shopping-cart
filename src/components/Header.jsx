@@ -7,12 +7,10 @@ import data from "../assets/data.json";
 import logo from "../assets/img/logo/logoMinimalista.png";
 import Button from "./Button";
 
-function Header({ initialCartList }) {
+function Header({ initialCartList, initialIsLogin }) {
   const [cartList, setCartList] = React.useState(null);
   const [logOut, setLogOut] = React.useState(false);
-  const [isLogin, setIsLogin] = React.useState(
-    JSON.parse(localStorage.getItem("islogin"))
-  );
+  const [isLogin, setIsLogin] = React.useState(initialIsLogin);
 
   function deleteItem(id) {
     const tempMap = new Map([...cartList]);
@@ -51,7 +49,7 @@ function Header({ initialCartList }) {
   }, [initialCartList]);
   return (
     <header>
-      <HamburguerMenu />
+      <HamburguerMenu initialIsLogin={initialIsLogin} />
       <div className="logoContainer">
         <Link to="/">
           <img src={logo} alt="" />
