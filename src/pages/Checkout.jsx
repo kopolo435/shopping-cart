@@ -108,7 +108,11 @@ function Checkout() {
         <div className="cartItems">
           <h1>Articulos en el carro</h1>
           {cartList.size > 0 ? (
-            <CartListDisplay cartList={cartList} deleteItem={deleteItem} />
+            <div className="listContainer">
+              <div className="cartItemsListContainer">
+                <CartListDisplay cartList={cartList} deleteItem={deleteItem} />
+              </div>
+            </div>
           ) : (
             <div className="emptyCartList">
               <p>No ha agregado articulos</p>
