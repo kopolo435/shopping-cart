@@ -1,12 +1,12 @@
 .hamburguerContainer {
   position: absolute;
   top: 77px;
-  background: var(--skyblue-300);
+  background: var(--skyblue-50);
   margin-left: -20px;
   padding: 20px;
   height: 100vh;
   width: 100vw;
-  transition: transform 0.5s ease-in-out;
+  transition: transform 0.2s ease-in-out;
   transform-origin: left;
   transform: scaleX(100%);
   -webkit-box-shadow: inset 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
@@ -68,6 +68,61 @@
   a {
     text-decoration: none;
   }
+}
+
+.loginHamburguer {
+  border: 3px solid var(--pink-500);
+  padding: 3px 5px;
+  background: var(--gold-500);
+  transition: transform 0.3s ease-in-out;
+  text-decoration: none;
+  color: var(--pink-900);
+}
+
+.loginHamburguer:hover,
+.loginHamburguer:focus-visible {
+  transform: scale(105%);
+  background-color: rgba(128, 128, 128, 0.425);
+}
+
+.loginHamburguer:active {
+  background: var(--gold-500);
+}
+
+.singupHamburguer {
+  border: 2px solid var(--pink-500);
+  padding: 3px 5px;
+  background: transparent;
+  transition: transform 0.3s ease-in-out;
+  text-decoration: none;
+  color: var(--pink-900);
+}
+
+.singupHamburguer:hover,
+.singupHamburguer:focus-visible {
+  transform: scale(105%);
+  background-color: rgba(128, 128, 128, 0.425);
+}
+
+.singupHamburguer:active {
+  background: transparent;
+}
+
+.logOutHamburguer {
+  border: 2px solid var(--pink-500);
+  padding: 3px 5px;
+  background: transparent;
+  transition: transform 0.3s ease-in-out;
+}
+
+.logOutHamburguer:hover,
+.logOutHamburguer:focus-visible {
+  transform: scale(105%);
+  background-color: rgba(128, 128, 128, 0.425);
+}
+
+.logOutHamburguer:active {
+  background: transparent;
 }
 
 @media (min-width: 500px) {

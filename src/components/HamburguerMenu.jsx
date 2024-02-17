@@ -91,12 +91,15 @@ function HamburguerMenu({ initialIsLogin }) {
         <div className="hamburguerActions">
           {!isLogin ? (
             <>
-              <Link to="/authentication/login" className="hamburguerAuth login">
+              <Link
+                to="/authentication/login"
+                className="hamburguerAuth loginHamburguer"
+              >
                 Iniciar sesion
               </Link>
               <Link
                 to="/authentication/singup"
-                className="hamburguerAuth login"
+                className="hamburguerAuth singupHamburguer"
               >
                 Registrarse
               </Link>
