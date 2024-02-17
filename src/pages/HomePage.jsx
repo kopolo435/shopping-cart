@@ -27,8 +27,8 @@ function HomePage() {
             <img src={logo} alt="" />
           </div>
           <div className="text">
-            <h1>¡Bienvenido a Arts Delish!</h1>
-            <p>
+            <h1 className="roboto-condensed-600">¡Bienvenido a Arts Delish!</h1>
+            <p className="roboto-condensed-400">
               Con nuestros productos , disfrutarás de delicias artesanales que
               te deleitarán. Desde tartas y pasteles exquisitos hasta galletas y
               cupcakes irresistibles, cada producto está elaborado con
@@ -38,7 +38,7 @@ function HomePage() {
           </div>
         </div>
         <hr />
-        <h2 className="categoryListTitle">
+        <h2 className="categoryListTitle roboto-condensed-400">
           Explora nuestras categorias de productos
         </h2>
         <div className="productsCategories">
@@ -50,7 +50,7 @@ function HomePage() {
               />
             ))
           ) : (
-            <p>Cargando categorias</p>
+            <p className="roboto-condensed-400">Cargando categorias</p>
           )}
         </div>
       </main>

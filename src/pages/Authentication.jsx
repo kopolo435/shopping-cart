@@ -65,18 +65,24 @@ function Authentication() {
       <main className="authMain">
         {type === "login" ? (
           <div className="formContainer">
-            <h1>Iniciar sesion</h1>
+            <h1 className="roboto-condensed-600">Iniciar sesion</h1>
+            <p className="roboto-condensed-400">
+              Inicia sesion para poder hacer tus compras
+            </p>
             <LoginForm onSubmit={handleLogin} />
-            <p>
+            <p className="roboto-condensed-400">
               No tienes una cuenta?{" "}
               <Link to="/authentication/singup">Registrate aqui</Link>
             </p>
           </div>
         ) : (
           <div className="formContainer">
-            <h1>Registrarse</h1>
+            <h1 className="roboto-condensed-600">Registrarse</h1>
+            <p className="roboto-condensed-400">
+              Crea una cuenta para poder realizar tus compras
+            </p>
             <RegisterForm onSubmit={handleRegister} />
-            <p>
+            <p className="roboto-condensed-400">
               Ya te registraste?{" "}
               <Link to="/authentication/login">Inicia sesion aqui</Link>
             </p>
@@ -84,7 +90,7 @@ function Authentication() {
         )}
         {notification !== "" && (
           <div className="authNotification">
-            <p>{notification}</p>
+            <p className="roboto-condensed-400">{notification}</p>
           </div>
         )}
       </main>

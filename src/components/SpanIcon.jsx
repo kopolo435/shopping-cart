@@ -8,7 +8,9 @@ function SpanIcon({ text, iconName, className }) {
       <span className={className}>{iconName}</span>
     </span>
   ) : (
-    <span className={className}>{iconName}</span>
+    <span className={className} aria-hidden="true">
+      {iconName}
+    </span>
   );
 }
 

@@ -9,8 +9,8 @@ function CategoryCard({ data }) {
         <img src={data.img} alt="" />
       </div>
       <div className="cardContent">
-        <h3>{data.cardTitle}</h3>
-        <p>{data.shortDescription}</p>
+        <h3 className="roboto-condensed-600">{data.cardTitle}</h3>
+        <p className="roboto-condensed-400">{data.shortDescription}</p>
       </div>
     </Link>
   );

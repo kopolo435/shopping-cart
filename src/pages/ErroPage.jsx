@@ -4,9 +4,9 @@ import React from "react";
 function ErrorPage() {
   return (
     <div>
-      <h1>Oh no, this route doesn't exist!</h1>
-      <Link to="/">
-        You can go back to the home page by clicking here, though!
+      <h1 className="roboto-condensed-600">Esta pagina no exitste</h1>
+      <Link to="/" className="roboto-condensed-400">
+        Volver a la pagina principal
       </Link>
     </div>
   );

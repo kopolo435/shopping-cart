@@ -40,7 +40,11 @@ function RegisterUserForm({ onSubmit }) {
   }, [submitting, setFormErrors, onSubmit, formValues]);
 
   return (
-    <form noValidate className="registerForm" onSubmit={handleSubmit}>
+    <form
+      noValidate
+      className="registerForm roboto-condensed-400"
+      onSubmit={handleSubmit}
+    >
       <TextInput
         type="text"
         label="Nombre"
@@ -77,7 +81,11 @@ function RegisterUserForm({ onSubmit }) {
         passwordValue={formValues.get("password")}
         submitting={submitting}
       />
-      <Button type="submit" className="signUpButton" onClick={() => {}}>
+      <Button
+        type="submit"
+        className="signUpButton roboto-condensed-600"
+        onClick={() => {}}
+      >
         Registrarse
       </Button>
     </form>

@@ -40,7 +40,11 @@ function AddCcForm({ onSubmit }) {
   }, [submitting, setFormErrors, onSubmit, FormValues]);
 
   return (
-    <form onSubmit={handleSubmit} className="addCreditCardForm" noValidate>
+    <form
+      onSubmit={handleSubmit}
+      className="addCreditCardForm roboto-condensed-400"
+      noValidate
+    >
       <TextInput
         type="text"
         label="Numero de tarjeta"
@@ -98,7 +102,11 @@ function AddCcForm({ onSubmit }) {
           submitting={submitting}
         />
       </fieldset>
-      <Button type="submit" className="saveNewCreditCard" onClick={() => {}}>
+      <Button
+        type="submit"
+        className="saveNewCreditCard roboto-condensed-600"
+        onClick={() => {}}
+      >
         <SpanIcon iconName="add_card" />
         Guardar datos
       </Button>

@@ -50,7 +50,7 @@ function ImgCarousell({ imgList }) {
               return <img key={index} src={imgData.img} alt={imgData.alt} />;
             })}
           </div>
-          <h3 data-testid="currentImgTitle">
+          <h3 data-testid="currentImgTitle" className="roboto-condensed-600">
             {imgList[currentImgIndex].title}
           </h3>
         </div>

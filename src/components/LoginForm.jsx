@@ -34,7 +34,11 @@ function LoginForm({ onSubmit }) {
   }, [submitting, setFormErrors, onSubmit, formValues]);
 
   return (
-    <form onSubmit={handleSubmit} className="loginForm" noValidate>
+    <form
+      onSubmit={handleSubmit}
+      className="loginForm roboto-condensed-400"
+      noValidate
+    >
       <TextInput
         type="email"
         label="Correo"
@@ -53,7 +57,11 @@ function LoginForm({ onSubmit }) {
         validation={passwordTest}
         submitting={submitting}
       />
-      <Button type="submit" className="logInButton" onClick={() => {}}>
+      <Button
+        type="submit"
+        className="logInButton roboto-condensed-600"
+        onClick={() => {}}
+      >
         Iniciar sesion
       </Button>
     </form>

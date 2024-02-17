@@ -10,7 +10,7 @@ function ShoppingItem({ item, deleteItem }) {
       <img src={`/${item.img}`} alt={item.alt} />
       <div className="content">
         <div className="top">
-          <h3>{`${item.quantity}x ${item.cardTitle}`}</h3>
+          <h3 className="roboto-condensed-400">{`${item.quantity}x ${item.cardTitle}`}</h3>
           <Button
             onClick={() => deleteItem(item.id)}
             type="button"
@@ -21,13 +21,13 @@ function ShoppingItem({ item, deleteItem }) {
           </Button>
         </div>
         <div className="text">
-          <p>{item.shortDescription}</p>
+          <p className="roboto-condensed-400">{item.shortDescription}</p>
           <div className="cost">
-            <p>
+            <p className="roboto-condensed-400">
               Precio individual:
               <span>{` $${formatMoneyAmount(`${item.price}`)}`}</span>
             </p>
-            <p>
+            <p className="roboto-condensed-400">
               Costo total:
               <span>
                 {` $${formatMoneyAmount(

@@ -73,7 +73,7 @@ function HamburguerMenu({ initialIsLogin }) {
         data-testid="menuContainer"
         className={`hamburguerContainer ${status}`}
       >
-        <nav className="hamburguerNav">
+        <nav className="hamburguerNav roboto-condensed-600">
           <ul>
             <li>
               <Link
@@ -122,18 +122,18 @@ function HamburguerMenu({ initialIsLogin }) {
             </li>
           </ul>
         </nav>
-        <div className="hamburguerActions">
+        <div className="hamburguerActions roboto-condensed-600">
           {!isLogin ? (
             <>
               <Link
                 to="/authentication/login"
-                className="hamburguerAuth loginHamburguer"
+                className="hamburguerAuth loginHamburguer roboto-condensed-600"
               >
                 Iniciar sesion
               </Link>
               <Link
                 to="/authentication/singup"
-                className="hamburguerAuth singupHamburguer"
+                className="hamburguerAuth singupHamburguer roboto-condensed-600"
               >
                 Registrarse
               </Link>
@@ -141,7 +141,7 @@ function HamburguerMenu({ initialIsLogin }) {
           ) : (
             <Button
               type="button"
-              className="logOutHamburguer"
+              className="logOutHamburguer roboto-condensed-600"
               onClick={() => handleLogOut()}
             >
               Cerrar sesion

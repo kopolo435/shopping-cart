@@ -5,7 +5,7 @@ import SpanIcon from "./SpanIcon";
 
 function CardDisplay({ cardData, addCardOnclick }) {
   return cardData ? (
-    <div className="cardInfoContainer">
+    <div className="cardInfoContainer roboto-condensed-400">
       <div data-testid="cardContainer" className="cardContainer">
         <SpanIcon iconName="credit_card" />
         <p>
@@ -14,12 +14,18 @@ function CardDisplay({ cardData, addCardOnclick }) {
         </p>
       </div>
       <Button type="button" className="useAnotherCard" onClick={addCardOnclick}>
-        <SpanIcon iconName="add_card" /> Usar otra tarjeta
+        <SpanIcon iconName="add_card" />
+        Usar otra tarjeta
       </Button>
     </div>
   ) : (
-    <Button type="button" className="addCardButton" onClick={addCardOnclick}>
-      <SpanIcon iconName="add_card" /> Agregar tarjeta de credito
+    <Button
+      type="button"
+      className="addCardButton roboto-condensed-400"
+      onClick={addCardOnclick}
+    >
+      <SpanIcon iconName="add_card" />
+      Agregar tarjeta de credito
     </Button>
   );
 }

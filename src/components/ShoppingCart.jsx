@@ -47,7 +47,7 @@ function ShoppinCart({ itemList, deleteItem }) {
         >
           <SpanIcon iconName="shopping_cart" />
         </Button>
-        <p data-testid="itemAmmount">{itemList.size}</p>
+        <p data-testid="itemAmmount roboto-condensed-600">{itemList.size}</p>
       </div>
       <div
         className={`shoppingCartContainer ${status}`}
@@ -63,18 +63,18 @@ function ShoppinCart({ itemList, deleteItem }) {
             <SpanIcon iconName="close" />{" "}
           </Button>
           <div className="logoContainer">
-            <Link to="/">
+            <Link to="/" className="headerLink">
               <img src={logo} alt="" />
-              <span>Arts Delish</span>
+              <span className="headerLinkText">Arts Delish</span>
             </Link>
           </div>
         </div>
-        <h2>Tu carro de compras</h2>
+        <h2 className="roboto-condensed-600">Tu carro de compras</h2>
         {cartList.size < 1 ? (
-          <p>Todavia no se ha agregado nada</p>
+          <p className="roboto-condensed-400">Todavia no se ha agregado nada</p>
         ) : (
           <>
-            <p>
+            <p className="roboto-condensed-400">
               Posee
               {` ${cartList.size}`} productos en su carro
             </p>
@@ -85,7 +85,10 @@ function ShoppinCart({ itemList, deleteItem }) {
             </div>
           </>
         )}
-        <Link to="/cart/checkout" className="goToCheckoutButton">
+        <Link
+          to="/cart/checkout"
+          className="goToCheckoutButton roboto-condensed-600"
+        >
           Ir a caja
         </Link>
       </div>

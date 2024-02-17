@@ -30,12 +30,12 @@ function CategoryPage() {
               <img src={info.img} alt="" />
             </div>
             <div className="categoryText">
-              <h1>{info.pageTitle}</h1>
-              <p>{info.longDescription}</p>
+              <h1 className="roboto-condensed-600">{info.pageTitle}</h1>
+              <p className="roboto-condensed-400">{info.longDescription}</p>
             </div>
           </div>
           <hr />
-          <h2 className="categoryListTitle">
+          <h2 className="categoryListTitle roboto-condensed-600">
             Nuestro catalogo de estos productos
           </h2>
           <div className="itemsContainer">
@@ -46,7 +46,7 @@ function CategoryPage() {
         </main>
       ) : (
         <main>
-          <p>Cargando informacion</p>
+          <p className="400">Cargando informacion</p>
         </main>
       )}
       <Footer />

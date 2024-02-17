@@ -17,10 +17,6 @@ header {
     height: auto;
     width: 70px;
   }
-
-  span {
-    display: none;
-  }
 }
 
 .headerActions {
@@ -41,6 +37,10 @@ header {
   transition: transform 0.3s ease-in-out;
   text-decoration: none;
   color: var(--pink-900);
+  font-family: "Roboto Condensed", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
 }
 
 .login:hover,
@@ -65,6 +65,10 @@ header {
   transition: transform 0.3s ease-in-out;
   text-decoration: none;
   color: var(--pink-900);
+  font-family: "Roboto Condensed", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
 }
 
 .singup:hover,
@@ -83,6 +87,11 @@ header {
   padding: 3px 5px;
   background: transparent;
   transition: transform 0.3s ease-in-out;
+  font-family: "Roboto Condensed", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 16px;
 }
 
 .logOutHeader:hover,
@@ -93,6 +102,22 @@ header {
 
 .logOutHeader:active {
   background: transparent;
+}
+
+.headerLink {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  text-decoration: none;
+  color: var(--gold-500);
+}
+
+.headerLinkText {
+  display: none;
+  font-family: "Great Vibes", cursive;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 60px;
 }
 
 @media (min-width: 500px) {
@@ -110,5 +135,11 @@ header {
 
   .logOutHeader {
     display: block;
+  }
+}
+
+@media (min-width: 700px) {
+  .headerLinkText {
+    display: inline;
   }
 }

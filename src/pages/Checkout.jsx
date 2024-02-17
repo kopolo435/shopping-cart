@@ -102,12 +102,16 @@ function Checkout() {
           >
             <SpanIcon iconName="close" />
           </Button>
-          <h3>Agregar nueva tarjeta de credito</h3>
-          <p>Los campos marcados con (*) son requeridos</p>
+          <h3 className="roboto-condensed-600">
+            Agregar nueva tarjeta de credito
+          </h3>
+          <p className="roboto-condensed-400">
+            Los campos marcados con (*) son requeridos
+          </p>
           <AddCcForm onSubmit={saveCreditCardInformation} />
         </div>
         <div className="cartItems">
-          <h1>Articulos en el carro</h1>
+          <h1 className="roboto-condensed-600">Articulos en el carro</h1>
           {cartList.size > 0 ? (
             <div className="listContainer">
               <div className="cartItemsListContainer">
@@ -122,23 +126,23 @@ function Checkout() {
         </div>
         <div className="paymentInfo">
           <div className="paymentInforCard">
-            <h2>Tarjeta de credito a usar</h2>
+            <h2 className="roboto-condensed-400">Tarjeta de credito a usar</h2>
             <CardDisplay
               cardData={JSON.parse(localStorage.getItem("creditCard"))}
               addCardOnclick={() => openCreditCardModal()}
             />
           </div>
           <div className="costInformation">
-            <h2>Precio total a pagar</h2>
-            <p>
+            <h2 className="roboto-condensed-400">Precio total a pagar</h2>
+            <p className="roboto-condensed-400">
               Total en productos:
               <span>{`$${formatMoneyAmount(`${totalPrice}`)}`}</span>
             </p>
-            <p>
+            <p className="roboto-condensed-400">
               Impuestos:
               <span>{` $${formatMoneyAmount(`${taxValue}`)}`}</span>
             </p>
-            <p>
+            <p className="roboto-condensed-400">
               Total a pagar:
               <span>
                 {` $${formatMoneyAmount(

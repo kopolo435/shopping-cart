@@ -55,15 +55,15 @@ function ItemPage({ saveToCart }) {
           </div>
           <div className="itemContainer">
             <div className="itemInformation">
-              <h1>{itemData.cardTitle}</h1>
-              <p>{itemData.longDescription}</p>
-              <p>
+              <h1 className="roboto-condensed-600">{itemData.cardTitle}</h1>
+              <p className="roboto-condensed-400">{itemData.longDescription}</p>
+              <p className="roboto-condensed-400">
                 Precio:
                 <span>{` $${itemData.price}`}</span>
               </p>
             </div>
             <div className="addToCart">
-              <label htmlFor="quantity">
+              <label htmlFor="quantity" className="roboto-condensed-400">
                 Cantidad
                 <input
                   id="quantity"
@@ -76,7 +76,7 @@ function ItemPage({ saveToCart }) {
               </label>
               <Button
                 type="button"
-                className="addToCartButton"
+                className="addToCartButton roboto-condensed-600"
                 onClick={() => handleClick()}
               >
                 <SpanIcon iconName="add_shopping_cart" />
@@ -86,7 +86,7 @@ function ItemPage({ saveToCart }) {
           </div>
         </main>
       ) : (
-        <main>
+        <main className="roboto-condensed-400">
           <p>Cargando informacion</p>
         </main>
       )}

@@ -51,9 +51,9 @@ function Header({ initialCartList, initialIsLogin }) {
     <header>
       <HamburguerMenu initialIsLogin={initialIsLogin} />
       <div className="logoContainer">
-        <Link to="/">
+        <Link to="/" className="headerLink">
           <img src={logo} alt="" />
-          <span>Arts Delish</span>
+          <span className="headerLinkText">Arts Delish</span>
         </Link>
       </div>
       <div className="headerActions">
