@@ -33,8 +33,66 @@ header {
   display: none;
 }
 
+.login {
+  display: none;
+  border: 3px solid var(--pink-500);
+  padding: 3px 5px;
+  background: var(--gold-500);
+  transition: transform 0.3s ease-in-out;
+  text-decoration: none;
+  color: var(--pink-900);
+}
+
+.login:hover,
+.login:focus-visible {
+  transform: scale(105%);
+  background-color: rgba(128, 128, 128, 0.425);
+}
+
+.login:active {
+  background: var(--gold-500);
+}
+
+.singup {
+  color: var(--pink-900);
+}
+
+.singup {
+  display: none;
+  border: 2px solid var(--pink-500);
+  padding: 3px 5px;
+  background: transparent;
+  transition: transform 0.3s ease-in-out;
+  text-decoration: none;
+  color: var(--pink-900);
+}
+
+.singup:hover,
+.singup:focus-visible {
+  transform: scale(105%);
+  background-color: rgba(128, 128, 128, 0.425);
+}
+
+.login:active {
+  background: transparent;
+}
+
 .logOutHeader {
   display: none;
+  border: 2px solid var(--pink-500);
+  padding: 3px 5px;
+  background: transparent;
+  transition: transform 0.3s ease-in-out;
+}
+
+.logOutHeader:hover,
+.logOutHeader:focus-visible {
+  transform: scale(105%);
+  background-color: rgba(128, 128, 128, 0.425);
+}
+
+.logOutHeader:active {
+  background: transparent;
 }
 
 @media (min-width: 500px) {

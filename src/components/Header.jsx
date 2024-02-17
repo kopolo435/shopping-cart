@@ -62,7 +62,7 @@ function Header({ initialCartList, initialIsLogin }) {
             <Link to="/authentication/login" className="headerAuth login">
               Iniciar sesion
             </Link>
-            <Link to="/authentication/singup" className="headerAuth login">
+            <Link to="/authentication/singup" className="headerAuth singup">
               Registrarse
             </Link>
           </>
