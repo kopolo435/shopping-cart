@@ -35,7 +35,7 @@ function CategoryPage() {
             </div>
           </div>
           <hr />
-          <h2 className="categoryListTitle roboto-condensed-600">
+          <h2 className="categoryListTitle roboto-condensed-400">
             Nuestro catalogo de estos productos
           </h2>
           <div className="itemsContainer">

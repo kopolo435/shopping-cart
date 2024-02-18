@@ -9,6 +9,7 @@ import getCartItems from "../javascript/getCartItems";
 import WideNav from "../components/WideNav";
 import ImgCarousell from "../components/ImgCarousell";
 import SpanIcon from "../components/SpanIcon";
+import formatMoneyAmount from "../javascript/formatMoney";
 
 function saveInLocalStorage(id, quantity) {
   const cartList = JSON.parse(localStorage.getItem("cartList"));
@@ -59,7 +60,7 @@ function ItemPage({ saveToCart }) {
               <p className="roboto-condensed-400">{itemData.longDescription}</p>
               <p className="roboto-condensed-400">
                 Precio:
-                <span>{` $${itemData.price}`}</span>
+                <span>{` $${formatMoneyAmount(`${itemData.price}`)}`}</span>
               </p>
             </div>
             <div className="addToCart">
