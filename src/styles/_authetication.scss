@@ -80,6 +80,10 @@
   display: flex;
   flex-direction: column;
   gap: 5px;
+
+  .errorInputText {
+    color: #a30000;
+  }
 }
 
 .authNotification {
@@ -90,6 +94,6 @@
 
   p {
     padding: 5px 10px;
-    background-color: var(--skyblue-500);
+    background-color: var(--pink-500);
   }
 }

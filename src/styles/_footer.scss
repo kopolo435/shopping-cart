@@ -12,16 +12,28 @@ footer {
   gap: 20px;
 }
 
+.contactoText {
+  font-size: 20px;
+}
+
 .phoneNumber {
   display: flex;
   align-items: center;
   gap: 10px;
+  color: var(--gold-900);
+  font-size: 18px;
 }
 
 .instagram {
   display: flex;
   align-items: center;
   gap: 10px;
+  color: var(--gold-900);
+  font-size: 18px;
+
+  a {
+    color: var(--gold-900);
+  }
 }
 
 .ubicacionContainer {
@@ -33,6 +45,10 @@ footer {
 .ubicacion {
   display: flex;
   align-items: center;
+
+  p {
+    font-size: 20px;
+  }
 }
 
 .ubicacionContainer {
