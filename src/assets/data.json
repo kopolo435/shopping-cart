@@ -4,7 +4,7 @@
     "dulces": {
       "pageTitle": "lorem5",
       "cardTitle": "Dulces",
-      "img": "src/assets/img/logo/pasteles/dulce.jpg",
+      "img": "public/assets/pasteles/dulce.jpg",
       "longDescription": "Los dulces mas delicioso, estan fabricados con esto y aquello",
       "shortDescription": "Los dulces mas delicioso",
       "pageLink": "/dulces",
@@ -13,7 +13,7 @@
     "cupcakes": {
       "pageTitle": "Cupcakes",
       "cardTitle": "Cupcakes",
-      "img": "src/assets/img/logo/pasteles/dulce.jpg",
+      "img": "public/assets/pasteles/dulce.jpg",
       "longDescription": "Los dulces mas delicioso, estan fabricados con esto y aquello",
       "shortDescription": "Los dulces mas delicioso",
       "pageLink": "/cupcakes",
@@ -22,7 +22,7 @@
     "postreshelados": {
       "pageTitle": "Postres helados",
       "cardTitle": "Postres helados",
-      "img": "src/assets/img/logo/pasteles/dulce.jpg",
+      "img": "public/assets/pasteles/dulce.jpg",
       "longDescription": "Los dulces mas delicioso, estan fabricados con esto y aquello",
       "shortDescription": "Los dulces mas deliciosos, preparados como tu decidas",
       "pageLink": "/postreshelados",
@@ -31,7 +31,7 @@
     "kpops": {
       "pageTitle": "Kpops",
       "cardTitle": "Kpops",
-      "img": "src/assets/img/logo/pasteles/dulce.jpg",
+      "img": "public/assets/pasteles/dulce.jpg",
       "longDescription": "Los dulces mas delicioso, estan fabricados con esto y aquello",
       "shortDescription": "Los dulces mas delicioso",
       "pageLink": "/kpops",
@@ -43,7 +43,7 @@
       "id": "1",
       "cardTitle": "Dulce de dos pisos",
       "pageTitle": "Dulce de tres pisos",
-      "img": "src/assets/img/logo/pasteles/dulce.jpg",
+      "img": "public/assets/pasteles/dulce.jpg",
       "alt": "",
       "shortDescription": "dulce de dos pisos con relleno",
       "longDescription": "Este dulce de tres pisos con rellenos solo se realiza por pedido especial",
@@ -51,17 +51,17 @@
       "price": "2",
       "imgList": [
         {
-          "img": "src/assets/img/logo/pasteles/dulce.jpg",
+          "img": "public/assets/pasteles/dulce.jpg",
           "alt": "",
           "title": "Imagen 1"
         },
         {
-          "img": "src/assets/img/logo/pasteles/dulce.jpg",
+          "img": "public/assets/pasteles/dulce.jpg",
           "alt": "",
           "title": "Imagen 2"
         },
         {
-          "img": "src/assets/img/logo/pasteles/dulce.jpg",
+          "img": "public/assets/pasteles/dulce.jpg",
           "alt": "",
           "title": "Imagen 3"
         }
@@ -71,7 +71,7 @@
       "id": "2",
       "cardTitle": "Dulce de tres pisos",
       "pageTitle": "Dulce de tres pisos",
-      "img": "src/assets/img/logo/pasteles/dulce.jpg",
+      "img": "public/assets/pasteles/dulce.jpg",
       "alt": "",
       "shortDescription": "dulce de tres pisos con relleno",
       "longDescription": "Este dulce de tres pisos con rellenos solo se realiza por pedido especial",
@@ -79,17 +79,17 @@
       "price": "2",
       "imgList": [
         {
-          "img": "src/assets/img/logo/pasteles/dulce.jpg",
+          "img": "public/assets/pasteles/dulce.jpg",
           "alt": "",
           "title": "Imagen 1"
         },
         {
-          "img": "src/assets/img/logo/pasteles/dulce.jpg",
+          "img": "public/assets/pasteles/dulce.jpg",
           "alt": "",
           "title": "Imagen 2"
         },
         {
-          "img": "src/assets/img/logo/pasteles/dulce.jpg",
+          "img": "public/assets/pasteles/dulce.jpg",
           "alt": "",
           "title": "Imagen 3"
         }
@@ -99,7 +99,7 @@
       "id": "3",
       "cardTitle": "Dulce de cuatro pisos",
       "pageTitle": "Dulce de tres pisos",
-      "img": "src/assets/img/logo/pasteles/dulce.jpg",
+      "img": "public/assets/pasteles/dulce.jpg",
       "alt": "",
       "shortDescription": "dulce de cuatro pisos con relleno",
       "longDescription": "Este dulce de tres pisos con rellenos solo se realiza por pedido especial",
@@ -107,17 +107,17 @@
       "price": "2",
       "imgList": [
         {
-          "img": "src/assets/img/logo/pasteles/dulce.jpg",
+          "img": "public/assets/pasteles/dulce.jpg",
           "alt": "",
           "title": "Imagen 1"
         },
         {
-          "img": "src/assets/img/logo/pasteles/dulce.jpg",
+          "img": "public/assets/pasteles/dulce.jpg",
           "alt": "",
           "title": "Imagen 2"
         },
         {
-          "img": "src/assets/img/logo/pasteles/dulce.jpg",
+          "img": "public/assets/pasteles/dulce.jpg",
           "alt": "",
           "title": "Imagen 3"
         }
