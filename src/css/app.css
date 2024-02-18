@@ -269,6 +269,7 @@ header {
   position: sticky;
   top: 0;
   background-color: var(--skyblue-50);
+  z-index: 1;
 }
 
 .logoContainer img {

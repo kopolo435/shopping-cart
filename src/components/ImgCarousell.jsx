@@ -39,7 +39,7 @@ function ImgCarousell({ imgList }) {
               if (index === currentImgIndex) {
                 return (
                   <img
-                    src={`/${imgData.img}`}
+                    src={`${imgData.img}`}
                     key={index}
                     alt={imgData.alt}
                     data-testid="currentImg"
